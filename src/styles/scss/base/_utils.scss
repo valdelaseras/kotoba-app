@@ -1,0 +1,15 @@
+$large-screen: 1024px;
+
+.desktop-only {
+    display: none;
+}
+
+@media only screen and ( min-width: $large-screen ){
+    .mobile-only {
+        display: none;
+    }
+
+    .desktop-only {
+        display: inline-block;
+    }
+}

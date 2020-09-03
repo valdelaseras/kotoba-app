@@ -1,0 +1,60 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  box-sizing: border-box;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--tertiary-color);
+  z-index: 999;
+}
+
+.mobile-menu,
+.branding-logo {
+  height: 40px;
+  width: 40px;
+}
+
+.branding-logo a,
+.branding-logo a > img {
+  height: 40px;
+  width: 40px;
+}
+
+.nav-checkbox {
+  visibility: hidden;
+}
+
+//.nav-checkbox:checked + .nav-toggle span {
+//  hamburger to X or whatever. Maybe do something cool with a kanji changing form
+//}
+
+.nav-toggle {
+  display: block;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+@media only screen and ( min-width: 1024px ) {
+    .nav-list {
+        margin: 0;
+        height: 40px;
+        width: auto;
+    }
+
+    .nav-list > li {
+        display: inline-block;
+        padding: 0 1rem;
+    }
+
+    .nav-link {
+        color: var(--secondary-color);
+    }
+}

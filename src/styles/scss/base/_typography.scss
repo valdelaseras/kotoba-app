@@ -1,0 +1,47 @@
+html {
+    font-size: 16px;
+    line-height: 2;
+    font-family: Helvetica, 'sans-serif';
+}
+
+@media only screen and ( min-width: $large-screen ) {
+    html {
+        font-size: 17px;
+    }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--quaternary-color);
+}
+
+label {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: calc( 3rem/1.61803398875);
+}
+
+h3 {
+  font-size: calc(calc( 3rem/1.61803398875)/1.61803398875);
+}
+
+.subtext {
+  font-weight: lighter;
+}
+
+.bold {
+  font-weight: bolder;
+  color: var(--quaternary-color);
+}
+
+a {
+  color: var(--secondary-color);
+}

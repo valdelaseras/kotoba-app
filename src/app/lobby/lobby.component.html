@@ -1,0 +1,57 @@
+<div id="lobby">
+  <div class="column">
+    <div class="content">
+      <!--all content is dynamic here-->
+      <h1>Lobby</h1>
+      <p class="subtext">Maybe some text</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="column three">
+      <div class="content">
+        <!--exam btn lists go here-->
+          <!--create a separate custom web component for these lists-->
+          <ul>
+              <li>Exam A</li>
+              <li>Exam B</li>
+              <li>Exam C</li>
+              <li>Exam D</li>
+          </ul>
+      </div>
+    </div>
+    <div class="column three">
+      <div class="content">
+        <!--exam btn lists go here-->
+          <!--create a separate custom web component for these lists-->
+          <ul>
+              <li>Exam A</li>
+              <li>Exam B</li>
+              <li>Exam C</li>
+              <li>Exam D</li>
+          </ul>
+      </div>
+    </div>
+    <div class="column three">
+      <div class="content">
+        <!--custom web component 'content text box' with exam style select dropdown goes here-->
+        <!--after selection, enable start btn and start exam from here-->
+          <p>
+              (exam choice description)
+          </p>
+          <p>
+              (current exam settings), link to profile/settings if user wants to change preference or font(style)
+          </p>
+          <form>
+              <label for="exam-settings">Exam settings</label>
+              <select id="exam-settings">
+                  <option title="" value="" selected>(exam choice) to Romaji</option>
+                  <option title="" value="">Romaji to (exam choice)</option>
+                  <option title="" value="">Mixed</option>
+              </select>
+
+              <button type="submit" class="btn btn-primary" routerLink="/exam" routerLinkActive="active">Start exam</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

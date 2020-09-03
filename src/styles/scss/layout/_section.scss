@@ -1,0 +1,21 @@
+/*@start section*/
+section {
+  // height of navigation(s)
+  margin-top: 140px;
+  height: calc(100vh - 140px);
+}
+/*@end section*/
+
+
+
+
+/*@start section-content*/
+.section-content {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    padding: 1rem 0;
+    height: 100%;
+}
+/*@end section-content*/
+

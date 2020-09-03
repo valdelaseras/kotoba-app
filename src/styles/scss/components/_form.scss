@@ -1,0 +1,40 @@
+input,
+select {
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    transition: all 100ms;
+}
+
+input {
+  padding: .5rem .8rem;
+}
+
+input[type='checkbox'] {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 0;
+}
+
+select {
+  margin: .5rem 0 1rem;
+  padding: .5rem;
+}
+
+form button {
+    margin: 0 .5rem;
+}
+
+label {
+  display: block;
+}
+
+input:focus,
+input:focus-within,
+input:active,
+select:focus,
+select:focus-within,
+select:active {
+  border-color: var(--quaternary-color);
+}
