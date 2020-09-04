@@ -10,6 +10,10 @@ button {
   transition: all 100ms;
 }
 
+.btn.btn-compact {
+  padding: .2rem;
+}
+
 .btn.btn-primary[disabled],
 .btn.btn-secondary[disabled] {
   background-color: var(--disabled-bg-color);
@@ -43,6 +47,20 @@ button {
     margin-right: 0;
 }
 
+.btn-group.vertical > li {
+  display: block;
+  margin-right: 0;
+  margin-bottom: .5rem;
+}
+
+.btn-group.vertical > li:last-child {
+  margin-bottom: 0;
+}
+
+.btn-group.vertical > li .btn {
+  width: 100%;
+}
+
 .btn.btn-primary {
   border-color: var(--secondary-color);
   background-color: var(--tertiary-color);
@@ -54,10 +72,22 @@ button {
   color: var(--secondary-color);
 }
 
+.btn.btn-tertiary {
+  background-color: var(--quaternary-color);
+  color: var(--tertiary-color);
+}
+
 .btn:hover,
 .btn:focus,
 .btn:focus-within {
   cursor: pointer;
+}
+
+.btn.btn-tertiary:hover,
+.btn.btn-tertiary:focus,
+.btn.btn-tertiary:focus-within,
+.btn.btn-tertiary:active {
+  border-color: var(--tertiary-color);
 }
 
 .btn.btn-secondary:hover,

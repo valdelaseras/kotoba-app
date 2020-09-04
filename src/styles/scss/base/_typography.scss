@@ -10,6 +10,10 @@ html {
     }
 }
 
+p {
+  font-weight: lighter;
+}
+
 h1,
 h2,
 h3 {
@@ -33,12 +37,12 @@ h3 {
   font-size: calc(calc( 3rem/1.61803398875)/1.61803398875);
 }
 
-.subtext {
-  font-weight: lighter;
-}
-
 .bold {
   font-weight: bolder;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .invalid-color {

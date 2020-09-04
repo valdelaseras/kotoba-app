@@ -16,33 +16,37 @@ import { AboutComponent } from './components/about/about.component';
 import { LoginComponent } from './components/login/login.component';
 import { ScoreComponent } from './components/score/score.component';
 import { HistoryComponent } from './components/history/history.component';
-import { CustomListsComponent } from './components/custom-lists/custom-lists.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { ScoreHistoryComponent } from './components/score-history/score-history.component';
 import { SecondaryNavComponent } from './components/decorator/secondary-nav/secondary-nav.component';
 import { AvailableExamsComponent } from './components/lobby/available-exams/available-exams.component';
-import { UserService } from './services/user.service';
+import { UserService } from './services/user/user.service';
+import { ExamService } from './services/exam/exam.service';
+import { DataSetService } from './services/dataset/data-set.service';
+
+const components = [
+  AppComponent,
+  NavComponent,
+  FooterComponent,
+  PopupComponent,
+  LobbyComponent,
+  LandingComponent,
+  ExamComponent,
+  QuestionComponent,
+  ProfileComponent,
+  AboutComponent,
+  LoginComponent,
+  ScoreComponent,
+  HistoryComponent,
+  SettingsComponent,
+  ScoreHistoryComponent,
+  SecondaryNavComponent,
+  AvailableExamsComponent
+];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavComponent,
-    FooterComponent,
-    PopupComponent,
-    LobbyComponent,
-    LandingComponent,
-    ExamComponent,
-    QuestionComponent,
-    ProfileComponent,
-    AboutComponent,
-    LoginComponent,
-    ScoreComponent,
-    HistoryComponent,
-    CustomListsComponent,
-    SettingsComponent,
-    ScoreHistoryComponent,
-    SecondaryNavComponent,
-    AvailableExamsComponent
+    ...components
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,9 @@ import { UserService } from './services/user.service';
     AppRoutingModule
   ],
   providers: [
-    UserService
+    UserService,
+    ExamService,
+    DataSetService
   ],
   bootstrap: [AppComponent]
 })

@@ -8,7 +8,7 @@
     <div class="column">
       <div class="column three">
         <div class="content">
-          <p class="subtext">
+          <p>
             Welcome to your lobby {{ currentUser.username }}. Below you can find the available exams for you.
             When you have decided what you want to practice, select a method on <span class="italic">how</span>
             to practice the list and start learning!
@@ -20,48 +20,42 @@
   <div class="column">
     <div class="column three">
       <div class="content">
-        <!--exam btn lists go here-->
-          <!--create a separate custom web component for these lists-->
-          <ul>
-              <li>Exam A</li>
-              <li>Exam B</li>
-              <li>Exam C</li>
-              <li>Exam D</li>
-          </ul>
+        <ul class="btn-group vertical">
+          <li *ngFor="let availableExam of availableExams">
+            <button class="btn btn-secondary" (click)="selectAvailableExam( availableExam )">{{ availableExam.title }}</button>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="column three">
       <div class="content">
-        <!--exam btn lists go here-->
-          <!--create a separate custom web component for these lists-->
-          <ul>
-              <li>Exam A</li>
-              <li>Exam B</li>
-              <li>Exam C</li>
-              <li>Exam D</li>
-          </ul>
+       <!--kanji exams go here-->
       </div>
     </div>
     <div class="column three">
       <div class="content">
-        <!--custom web component 'content text box' with exam style select dropdown goes here-->
-        <!--after selection, enable start btn and start exam from here-->
-          <p>
-              (exam choice description)
-          </p>
-          <p>
-              (current exam settings), link to profile/settings if user wants to change preference or font(style)
-          </p>
-          <form>
-              <label for="exam-settings">Exam settings</label>
-              <select id="exam-settings">
-                  <option title="" value="" selected>(exam choice) to Romaji</option>
-                  <option title="" value="">Romaji to (exam choice)</option>
-                  <option title="" value="">Mixed</option>
-              </select>
+        <div *ngIf="selectedAvailableExam">
+          <header>
+            <h3>{{ selectedAvailableExam.title}} </h3>
+          </header>
 
+          <main>
+            <p>{{ selectedAvailableExam.description }}</p>
+            <p>Currently, your exam rules are set to: (examrules)</p>
+            <button type="button" class="btn btn-compact btn-tertiary" title="Change settings" routerLink="/settings">Change settings</button>
+          </main>
+
+          <footer>
+            <form>
+              <label for="exam-settings">Select your exam method</label>
+              <select id="exam-settings">
+                <option *ngFor="let method of selectedAvailableExam.methods" title="{{ method }}" value="{{ method }}">{{ method }}</option>
+              </select>
               <button type="submit" class="btn btn-primary" routerLink="/exam" routerLinkActive="active">Start exam</button>
-          </form>
+            </form>
+          </footer>
+        </div>
+
       </div>
     </div>
   </div>

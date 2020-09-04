@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
-import { User } from '../../model/user.model';
+import { UserService } from '../../services/user/user.service';
+import { User } from '../../model/user/user.model';
+import { DataSetService } from '../../services/dataset/data-set.service';
+import { IAvailableExam } from '../../services/dataset/available-exam.interface';
 
 @Component({
   selector: 'app-lobby',
@@ -9,8 +11,17 @@ import { User } from '../../model/user.model';
 })
 export class LobbyComponent implements OnInit {
   currentUser: User;
-  constructor( private userService: UserService ) {
+  availableExams: IAvailableExam[];
+
+  selectedAvailableExam: IAvailableExam;
+
+  constructor( private userService: UserService, private datasetService: DataSetService ) {
     this.currentUser = this.userService.getCurrentUser();
+    this.availableExams = this.datasetService.getAvailableExams();
+  }
+
+  selectAvailableExam(availableExam: IAvailableExam ): void {
+    this.selectedAvailableExam = availableExam;
   }
 
   ngOnInit(): void {
