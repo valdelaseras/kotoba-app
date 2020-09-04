@@ -1,7 +1,7 @@
 <div id="profile">
   <div class="column">
     <div class="content">
-      <h1>user.name</h1>
+      <h1>{{ currentUser.username }}</h1>
     </div>
   </div>
   <div class="column">
@@ -9,16 +9,13 @@
       <div class="content">
         <ul>
           <li>
-            <!--in settings we'd have things like theme, delete history, exam settings like
-            repeat wrongly answered questions infinitely until answered correctly, never repeat etc etc-->
             <a title="Settings" routerLink="/settings" routerLinkActive="active">Settings</a>
           </li>
           <li>
-            <!--so init a lobby here with different content than "default lobby" ofc.-->
             <a title="Custom lists" routerLink="/lobby" routerLinkActive="active">Custom lists</a>
           </li>
+          <!--if settings general/progress is checked-->
           <li>
-            <!--all time history / scores of user-->
             <a title="Score history" routerLink="/score-history" routerLinkActive="active">Your score history</a>
           </li>
         </ul>

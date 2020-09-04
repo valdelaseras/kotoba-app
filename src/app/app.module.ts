@@ -19,8 +19,9 @@ import { HistoryComponent } from './components/history/history.component';
 import { CustomListsComponent } from './components/custom-lists/custom-lists.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { ScoreHistoryComponent } from './components/score-history/score-history.component';
-import { SecondaryNavComponent } from './components/secondary-nav/secondary-nav.component';
+import { SecondaryNavComponent } from './components/decorator/secondary-nav/secondary-nav.component';
 import { AvailableExamsComponent } from './components/lobby/available-exams/available-exams.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { AvailableExamsComponent } from './components/lobby/available-exams/avai
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

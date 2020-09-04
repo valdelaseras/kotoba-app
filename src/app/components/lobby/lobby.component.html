@@ -1,11 +1,22 @@
 <div id="lobby">
   <div class="column">
-    <div class="content">
-      <!--all content is dynamic here-->
-      <h1>Lobby</h1>
-      <p class="subtext">Maybe some text</p>
+    <div class="column">
+      <div class="content">
+        <h1>Lobby</h1>
+      </div>
     </div>
+    <div class="column">
+      <div class="column three">
+        <div class="content">
+          <p class="subtext">
+            Welcome to your lobby {{ currentUser.username }}. Below you can find the available exams for you.
+            When you have decided what you want to practice, select a method on <span class="italic">how</span>
+            to practice the list and start learning!
+          </p>
+        </div>
+      </div>
   </div>
+
   <div class="column">
     <div class="column three">
       <div class="content">
