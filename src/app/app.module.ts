@@ -4,22 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './decorator/nav/nav.component';
-import { FooterComponent } from './decorator/footer/footer.component';
-import { PopupComponent } from './popup/popup.component';
-import { LobbyComponent } from './lobby/lobby.component';
-import { LandingComponent } from './landing/landing.component';
-import { ExamComponent } from './exam/exam.component';
-import { QuestionComponent } from './question/question.component';
-import { ProfileComponent } from './profile/profile.component';
-import { AboutComponent } from './about/about.component';
-import { LoginComponent } from './login/login.component';
-import { ScoreComponent } from './score/score.component';
-import { HistoryComponent } from './history/history.component';
-import { CustomListsComponent } from './custom-lists/custom-lists.component';
-import { SettingsComponent } from './settings/settings.component';
-import { ScoreHistoryComponent } from './score-history/score-history.component';
-import { SecondaryNavComponent } from './secondary-nav/secondary-nav.component';
+import { NavComponent } from './components/decorator/nav/nav.component';
+import { FooterComponent } from './components/decorator/footer/footer.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { LobbyComponent } from './components/lobby/lobby.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { ExamComponent } from './components/exam/exam.component';
+import { QuestionComponent } from './components/question/question.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AboutComponent } from './components/about/about.component';
+import { LoginComponent } from './components/login/login.component';
+import { ScoreComponent } from './components/score/score.component';
+import { HistoryComponent } from './components/history/history.component';
+import { CustomListsComponent } from './components/custom-lists/custom-lists.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { ScoreHistoryComponent } from './components/score-history/score-history.component';
+import { SecondaryNavComponent } from './components/secondary-nav/secondary-nav.component';
+import { AvailableExamsComponent } from './components/lobby/available-exams/available-exams.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SecondaryNavComponent } from './secondary-nav/secondary-nav.component';
     CustomListsComponent,
     SettingsComponent,
     ScoreHistoryComponent,
-    SecondaryNavComponent
+    SecondaryNavComponent,
+    AvailableExamsComponent
   ],
   imports: [
     BrowserModule,

@@ -15,13 +15,22 @@
 .mobile-menu,
 .branding-logo {
   height: 40px;
+}
+
+.mobile-menu {
   width: 40px;
 }
 
+.branding-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .branding-logo a,
-.branding-logo a > img {
-  height: 40px;
-  width: 40px;
+.branding-logo a, span {
+  line-height: 0;
+  font-size: 2rem;
 }
 
 .nav-checkbox {

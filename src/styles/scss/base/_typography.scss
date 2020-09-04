@@ -39,9 +39,18 @@ h3 {
 
 .bold {
   font-weight: bolder;
+}
+
+.invalid-color {
+  color: var(--invalid-color);
+}
+
+.theme-quaternary {
   color: var(--quaternary-color);
 }
 
 a {
   color: var(--secondary-color);
+  text-decoration: none;
 }
+

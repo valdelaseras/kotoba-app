@@ -3,3 +3,5 @@ TODO: add ARIA labels and roles everywhere
 TODO: build some collapsible component with input checkbox that works in nav mobile and also for the settings page ( collapse the 3 setting content by default )
 TODO: clear(er) distinguishments between typography elements
 TODO: move secondary-nav to /decorator
+TODO: all components must of course be reusable with dynamic content etc. ( so you could reuse the login component anywhere, with different label titles, username/email, password etc. )
+TODO: seems to be a standard thing to remove the 'app-' prefixes from angular components as long as the tags don't clash with anything already existing? Double check
