@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IAvailableExam } from './available-exam.interface';
-import { IExamQuestion } from '../../model/exam/exam-question.interface';
+import { IAvailableExam } from '../../model/interfaces/available-exam.interface';
+import { IDataEntry } from '../../model/interfaces/data-entry.interface';
 
 import availableExams from '../../../datasets/available-exams/available-exams.json';
 import hiragana from '../../../datasets/kana/hiragana.json';
@@ -17,7 +17,7 @@ export class DataSetService {
     return availableExams;
   }
 
-  getDataSet(name: string ): IExamQuestion[] {
+  getDataSet( name: string ): IDataEntry[] {
     switch ( name ) {
       case DATA_SET_NAME.HIRAGANA:
         return hiragana;

@@ -1,22 +1,24 @@
 nav {
-  background-color: var(--primary-color);
-  position: fixed;
-  top: 70px;
-  left: 0;
-  right: 0;
-  box-sizing: border-box;
-  padding: 15px;
-  z-index: 999;
-  height: 70px;
-}
-
-.btn-group {
-  margin: 0;
+  display: none;
 }
 
 @media only screen and (min-width: 1024px) {
   nav {
+    display: inline-block;
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 15px 3rem;
+    z-index: 999;
+    height: 70px;
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .btn-group {
+    margin: 0;
   }
 }

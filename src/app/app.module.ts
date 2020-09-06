@@ -10,11 +10,9 @@ import { PopupComponent } from './components/popup/popup.component';
 import { LobbyComponent } from './components/lobby/lobby.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ExamComponent } from './components/exam/exam.component';
-import { QuestionComponent } from './components/question/question.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AboutComponent } from './components/about/about.component';
 import { LoginComponent } from './components/login/login.component';
-import { ScoreComponent } from './components/score/score.component';
 import { HistoryComponent } from './components/history/history.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { ScoreHistoryComponent } from './components/score-history/score-history.component';
@@ -23,6 +21,8 @@ import { AvailableExamsComponent } from './components/lobby/available-exams/avai
 import { UserService } from './services/user/user.service';
 import { ExamService } from './services/exam/exam.service';
 import { DataSetService } from './services/dataset/data-set.service';
+import { ScoreSheetComponent } from './components/score-sheet/score-sheet/score-sheet.component';
+import {SettingsService} from './services/settings/settings.service';
 
 const components = [
   AppComponent,
@@ -32,21 +32,20 @@ const components = [
   LobbyComponent,
   LandingComponent,
   ExamComponent,
-  QuestionComponent,
   ProfileComponent,
   AboutComponent,
   LoginComponent,
-  ScoreComponent,
   HistoryComponent,
   SettingsComponent,
   ScoreHistoryComponent,
   SecondaryNavComponent,
+  ScoreSheetComponent,
   AvailableExamsComponent
 ];
 
 @NgModule({
   declarations: [
-    ...components
+    ...components,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +55,7 @@ const components = [
   providers: [
     UserService,
     ExamService,
+    SettingsService,
     DataSetService
   ],
   bootstrap: [AppComponent]

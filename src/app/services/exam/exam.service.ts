@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Exam } from '../../model/exam/exam.model';
-import {IAvailableExam} from '../dataset/available-exam.interface';
-import {IExamSettings} from '../../model/exam/exam-settings.interface';
-import {DataSetService} from '../dataset/data-set.service';
+import { IAvailableExam } from '../../model/interfaces/available-exam.interface';
+import { IExamSettings } from '../../model/interfaces/exam-settings.interface';
+import { DataSetService } from '../dataset/data-set.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +12,13 @@ export class ExamService {
 
   constructor( private datasetService: DataSetService) {}
 
-  createExam( selectedExam: IAvailableExam, settings: IExamSettings ): Exam {
-    const questionnaire = [];
+  createExam( selectedExam: IAvailableExam, settings: IExamSettings ): void {
+    const dataSet = [];
 
     for ( const dataSetName of selectedExam.dataSets ) {
-      questionnaire.push( this.datasetService.getDataSet( dataSetName ) );
+      dataSet.push( ...this.datasetService.getDataSet( dataSetName ) );
     }
 
-    return new Exam( questionnaire, settings);
+    this.currentExam = new Exam( dataSet, settings, selectedExam.title );
   }
 }

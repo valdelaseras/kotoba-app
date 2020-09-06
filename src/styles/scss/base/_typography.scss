@@ -16,7 +16,9 @@ p {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
+  line-height: normal;
   margin: 0;
   color: var(--quaternary-color);
 }
@@ -26,19 +28,27 @@ label {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: calc( 3rem/1.61803398875);
+  font-size: calc( 2.5rem/1.61803398875);
 }
 
-h3 {
-  font-size: calc(calc( 3rem/1.61803398875)/1.61803398875);
+h3, h4 {
+  font-size: calc(calc( 2.5rem/1.61803398875)/1.61803398875);
+}
+
+.small {
+  font-size: small;
 }
 
 .bold {
   font-weight: bolder;
+}
+
+.highlight {
+  color: var(--quaternary-color);
 }
 
 .italic {

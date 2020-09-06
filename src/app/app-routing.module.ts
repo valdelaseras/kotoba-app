@@ -5,9 +5,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { LobbyComponent } from './components/lobby/lobby.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ExamComponent } from './components/exam/exam.component';
-import { ScoreComponent} from './components/score/score.component';
 import { ScoreHistoryComponent } from './components/score-history/score-history.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { ScoreSheetComponent } from './components/score-sheet/score-sheet/score-sheet.component';
 
 const routes: Routes = [
   { path: 'login', component: LandingComponent },
@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'lobby', component: LobbyComponent },
   { path: 'exam', component: ExamComponent },
-  { path: 'score', component: ScoreComponent },
+  { path: 'score', component: ScoreSheetComponent },
   { path: 'score-history', component: ScoreHistoryComponent }
 ];
 

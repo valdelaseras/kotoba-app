@@ -8,13 +8,18 @@ select {
 }
 
 input {
-  padding: .5rem .8rem;
+  font-size: 1rem;
+  padding: .5rem;
 }
 
 input[type='checkbox'] {
   height: 1rem;
   width: 1rem;
   border-radius: 0;
+}
+
+label + p {
+  font-size: small;
 }
 
 select {
@@ -37,4 +42,15 @@ select:focus,
 select:focus-within,
 select:active {
   border-color: var(--quaternary-color);
+}
+
+.form-group {
+  margin: 1.5rem 0;
+}
+
+fieldset {
+  box-sizing: border-box;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, .1);
 }

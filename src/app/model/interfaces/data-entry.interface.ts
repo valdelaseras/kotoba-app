@@ -1,4 +1,4 @@
-export interface IExamQuestion {
+export interface IDataEntry{
   kana: string;
   romaji: string;
   translation?: string[];

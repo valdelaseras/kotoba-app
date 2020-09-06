@@ -1,16 +1,19 @@
 <form #loginForm="ngForm" id="login-form" (ngSubmit)="submitForm()">
-  <label for="username-input">Please enter a username</label>
-  <input [(ngModel)]="user.name" #username="ngModel"
-         name="username"
-         id="username-input"
-         type="text"
-         placeholder="Your username"
-         autocomplete="off"
-         autofocus
-         required>
-  <button class="btn btn-primary"
-          type="submit" [disabled]="loginForm.invalid">Submit</button>
-  <div *ngIf="username.dirty">
-    <p *ngIf="username.invalid" class="invalid-color">Please enter a valid username</p>
+  <div class="form-group">
+    <label for="username-input"></label>
+    <input [(ngModel)]="user.name" #username="ngModel"
+           name="username"
+           id="username-input"
+           type="text"
+           placeholder="Your username"
+           autocomplete="off"
+           minlength="1"
+           autofocus
+           required>
+    <button class="btn btn-primary"
+            type="submit" [disabled]="loginForm.invalid">Submit</button>
+    <div *ngIf="username.dirty">
+      <p *ngIf="username.invalid" class="invalid-color">Your username is invalid</p>
+    </div>
   </div>
 </form>

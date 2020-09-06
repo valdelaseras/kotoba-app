@@ -3,11 +3,23 @@
   flex-direction: column;
 }
 
-label,
-input {
-  margin-bottom: 1rem;
+label {
+  margin-bottom: 2rem;
 }
 
-button {
-  margin: 0;
+input {
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--secondary-color);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+input:hover,
+input:focus,
+input:focus-within,
+input:active {
+  border-bottom: 1px solid var(--quaternary-color);
 }

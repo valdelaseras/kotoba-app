@@ -8,7 +8,7 @@
     ],
     "methods": [
       "Romaji to hiragana",
-      "Hiragana to Romaji",
+      "Hiragana to romaji",
       "Shuffle"
     ]
   }, {
@@ -33,7 +33,7 @@
     ],
     "methods": [
       "Romaji to kana",
-      "Kana to Romaji",
+      "Kana to romaji",
       "Shuffle"
     ]
   }

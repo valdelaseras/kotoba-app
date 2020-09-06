@@ -1,19 +1,61 @@
 <div id="exam">
-    <div class="column">
-        <div class="content">
-            <h1>Exam title</h1>
-            <p><span class="bold theme-quaternary">Tip:</span> Don't worry about using uppercase or lowercase in your answer</p>
-            <p>Current exam settings</p>
-        </div>
+  <div class="column">
+    <div class="content">
+      <h2>{{ exam.title }}</h2>
     </div>
-    <div class="column">
-        <div class="content">
-            <form>
-                <label for="question"></label>
-                <input id="question" placeholder="Answer">
-                <button type="submit" class="btn btn-primary" disabled>Submit</button>
-            </form>
-        </div>
+  </div>
+  <div class="column">
+    <div class="column two">
+      <div class="content">
+        <form #examForm="ngForm" id="exam-form" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <label for="question">{{ currentQuestion.question }}</label>
+              </legend>
+              <input id="question"
+                     required
+                     #answer="ngModel"
+                     name="answer"
+                     autocomplete="off"
+                     [(ngModel)]="currentQuestion.givenAnswer"
+                     [placeholder]="currentQuestion.placeholder"/>
+              <button type="submit"
+                      class="btn btn-primary"
+                      [disabled]="examForm.pristine || examForm.invalid">
+                Submit
+              </button>
+              <div *ngIf="answer.dirty && answer.errors">
+                <!--<p *ngIf="answer.errors.required" class="invalid-color">This field is required</p>-->
+                <!--<p *ngIf="answer" class="invalid-color">This is incorrect</p>-->
+              </div>
+            </fieldset>
+          </div>
+        </form>
+      </div>
     </div>
+    <div class="column four">
+      <div class="content">
+        <fieldset>
+          <legend>
+            <h2>Stats</h2>
+          </legend>
+         <ul class="stats">
+           <li>
+             <h4>Progress</h4>
+             <span>{{ currentQuestionIndex + 1 }}</span> of <span>{{ exam.questionnaire.length }}</span>
+           </li>
+           <li>
+             <h4>Correct</h4>
+             <span>{{ correctAnswers.length }}</span>
+
+             <h4>Incorrect</h4>
+             <span>{{ incorrectAnswers.length }}</span>
+           </li>
+         </ul>
+        </fieldset>
+      </div>
+    </div>
+  </div>
 </div>
 
