@@ -19,8 +19,8 @@ export class SettingsComponent implements OnInit {
   constructor( private settingsService: SettingsService ) {
     this.currentSettings = this.settingsService.getSettings();
     this.examOptions = this.settingsService.getExamOptions();
-    this.visualOptions = this.settingsService.getVisualSettings();
-    this.generalOptions = this.settingsService.getgeneralSettings();
+    this.visualOptions = this.settingsService.getVisualOptions();
+    this.generalOptions = this.settingsService.getGeneralOptions();
   }
 
   ngOnInit(): void {

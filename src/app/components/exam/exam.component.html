@@ -18,7 +18,7 @@
                      #answer="ngModel"
                      name="answer"
                      autocomplete="off"
-                     [(ngModel)]="currentQuestion.givenAnswer"
+                     [(ngModel)]="givenAnswer.entry"
                      [placeholder]="currentQuestion.placeholder"/>
               <button type="submit"
                       class="btn btn-primary"
@@ -26,8 +26,10 @@
                 Submit
               </button>
               <div *ngIf="answer.dirty && answer.errors">
-                <!--<p *ngIf="answer.errors.required" class="invalid-color">This field is required</p>-->
-                <!--<p *ngIf="answer" class="invalid-color">This is incorrect</p>-->
+
+              </div>
+              <div *ngIf="!answerCorrect">
+                This is not correct
               </div>
             </fieldset>
           </div>
@@ -47,10 +49,10 @@
            </li>
            <li>
              <h4>Correct</h4>
-             <span>{{ correctAnswers.length }}</span>
+             <span>{{ score.numberOfCorrectAnswers() }}</span>
 
              <h4>Incorrect</h4>
-             <span>{{ incorrectAnswers.length }}</span>
+             <span>{{ score.numberOfIncorrectAnswers() }}</span>
            </li>
          </ul>
         </fieldset>

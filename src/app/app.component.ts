@@ -13,9 +13,6 @@ export class AppComponent implements OnInit {
   constructor( private router: Router, private userService: UserService ) {}
 
   ngOnInit(): void {
-    if ( this.userService.getCurrentUser() ) {
-      this.router.navigate(['lobby']);
-    }
   }
 
   onLogin(): boolean {

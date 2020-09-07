@@ -3,6 +3,10 @@ import { IExamQuestion } from '../../model/interfaces/exam-question.interface';
 import { Router } from '@angular/router';
 import { ExamService } from '../../services/exam/exam.service';
 import { Exam } from '../../model/exam/exam.model';
+import {IExamQuestionEntry} from '../../model/interfaces/exam-question-entry.interface';
+import {IExamGivenAnswer} from '../../model/interfaces/exam-given-answer.interface';
+import {Score} from '../../model/score/score.model';
+import {ScoreService} from '../../services/score/score.service';
 
 @Component({
   selector: 'app-exam',
@@ -11,44 +15,64 @@ import { Exam } from '../../model/exam/exam.model';
 })
 export class ExamComponent implements OnInit {
   exam: Exam;
+  score: Score;
   currentQuestionIndex = 0;
   currentQuestion: IExamQuestion;
-  correctAnswers = [];
-  incorrectAnswers = [];
+  currentExamQuestionEntry: IExamQuestionEntry;
+  givenAnswer: IExamGivenAnswer = {
+    entry: undefined,
+    valid: false
+  };
+  answerCorrect = true;
 
-  constructor( private examService: ExamService, private router: Router ) {
+  constructor( private examService: ExamService,
+               private scoreService: ScoreService,
+               private router: Router ) {
     this.exam = this.examService.currentExam;
+    this.score = new Score();
   }
 
   ngOnInit(): void {
     this.currentQuestion = this.exam.questionnaire[ this.currentQuestionIndex];
+    this.initExamQuestionEntry( this.currentQuestion );
   }
 
   submitForm(): void {
-    if ( this.answerIsCorrect( this.currentQuestion ) ) {
-      this.saveAnswer( this.currentQuestion, this.correctAnswers );
+    this.givenAnswer.valid = this.answerIsCorrect();
+    this.saveGivenAnswerEntry();
+
+    if ( this.givenAnswer.valid ) {
+      this.givenAnswer.entry = undefined;
       this.updateQuestion();
-    } else {
-      this.saveAnswer( this.currentQuestion, this.incorrectAnswers );
     }
   }
 
-  answerIsCorrect( currentQuestion: IExamQuestion, ): boolean {
-      return currentQuestion.answer === currentQuestion.givenAnswer;
+  answerIsCorrect(): boolean {
+    this.answerCorrect = this.currentQuestion.answer === this.givenAnswer.entry;
+    return this.answerCorrect;
   }
 
   updateQuestion(): void {
-    this.currentQuestion = this.exam.questionnaire[ this.currentQuestionIndex += 1];
+    if ( this.currentQuestionIndex + 1 >= this.exam.questionnaire.length ) {
+      this.scoreService.setScore( this.score );
+      this.router.navigate(['score', this.score.timestamp]);
+    } else {
+      this.currentQuestion = this.exam.questionnaire[ this.currentQuestionIndex += 1];
+      this.initExamQuestionEntry( this.currentQuestion );
+    }
   }
 
-  saveAnswer( currentQuestion: IExamQuestion, array: Array<any>): void {
-    // TODO: Replace with IExamQuestionEntry?
-    const examQuestionEntry = {
+  initExamQuestionEntry( currentQuestion: IExamQuestion ): void {
+    this.currentExamQuestionEntry = {
       question: currentQuestion.question,
       answer: currentQuestion.answer,
-      givenAnswer: currentQuestion.givenAnswer
+      givenAnswers: [],
     };
-    array.push( examQuestionEntry );
+    this.score.addEntry( this.currentExamQuestionEntry );
+  }
+
+  saveGivenAnswerEntry( ): void {
+    this.currentExamQuestionEntry.givenAnswers.push( Object.assign({}, this.givenAnswer) );
   }
 
   // resolveExamEnd(): void {

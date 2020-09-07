@@ -8,13 +8,14 @@
   <div class="column">
     <div class="column two">
       <div class="content">
-          <fieldset>
+          <fieldset *ngIf="score">
             <legend>
-              <h4>Correct answers</h4>
+              <h4>Your answers</h4>
             </legend>
 
-            <ul>
-              <li></li>
+            <ul *ngFor="let entry of score.getEntries()">
+              <li>{{ entry.question }}</li>
+              <li *ngFor="let answer of entry.givenAnswers">{{ answer.entry }}</li>
             </ul>
           </fieldset>
       </div>
@@ -23,7 +24,7 @@
       <div class="content">
         <fieldset>
           <legend>
-            <h4>Incorrect answers</h4>
+            <h4></h4>
           </legend>
 
           <ul>

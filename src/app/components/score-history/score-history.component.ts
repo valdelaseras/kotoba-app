@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ScoreService} from '../../services/score/score.service';
 
 @Component({
   selector: 'app-score-history',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreHistoryComponent implements OnInit {
 
-  constructor() { }
+  constructor( private scoreService: ScoreService ) {
+    // this.scoreRecords = this.scoreService.
+  }
 
   ngOnInit(): void {
   }

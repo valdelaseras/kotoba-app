@@ -56,7 +56,7 @@ export class SettingsService {
     };
   }
 
-  getVisualSettings(): IVisualOptions {
+  getVisualOptions(): IVisualOptions {
     return {
       theme: ['Dark theme', 'Light theme'],
       font: ['Default', 'Arial', 'Helvetica'],
@@ -65,7 +65,7 @@ export class SettingsService {
     };
   }
 
-  getgeneralSettings(): IGeneralOptions {
+  getGeneralOptions(): IGeneralOptions {
     return {
       record: [ true, false ]
     };

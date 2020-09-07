@@ -23,8 +23,10 @@ export class Exam {
 
   private getQuestion( dataEntry: IDataEntry ): IExamQuestion {
     switch ( this.settings.method ) {
+      case 'Katakana to romaji':
       case 'Hiragana to romaji':
         return { question: dataEntry.kana, answer: dataEntry.romaji, placeholder: 'Romaji' };
+      case 'Romaji to katakana':
       case 'Romaji to hiragana':
         return { question: dataEntry.romaji, answer: dataEntry.kana, placeholder: 'Hiragana' };
       case 'Shuffle':

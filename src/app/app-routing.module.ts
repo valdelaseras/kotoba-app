@@ -8,16 +8,18 @@ import { ExamComponent } from './components/exam/exam.component';
 import { ScoreHistoryComponent } from './components/score-history/score-history.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { ScoreSheetComponent } from './components/score-sheet/score-sheet/score-sheet.component';
+import { RouteGuard } from './route-guard';
 
 const routes: Routes = [
   { path: 'login', component: LandingComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'lobby', component: LobbyComponent },
-  { path: 'exam', component: ExamComponent },
-  { path: 'score', component: ScoreSheetComponent },
-  { path: 'score-history', component: ScoreHistoryComponent }
+  { path: 'profile', component: ProfileComponent, canActivate: [RouteGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [RouteGuard] },
+  { path: 'lobby', component: LobbyComponent, canActivate: [RouteGuard] },
+  { path: 'exam', component: ExamComponent, canActivate: [RouteGuard] },
+  { path: 'score/:timestamp', component: ScoreSheetComponent, canActivate: [RouteGuard] },
+  { path: 'score-history', component: ScoreHistoryComponent, canActivate: [RouteGuard] },
+  { path: '', pathMatch: 'full', redirectTo: 'lobby'}
 ];
 
 @NgModule({
