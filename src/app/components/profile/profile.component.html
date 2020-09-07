@@ -1,24 +1,29 @@
 <div id="profile">
   <div class="column">
     <div class="content">
-      <h1>{{ currentUser.username }}</h1>
+      <h1>Your profile</h1>
     </div>
   </div>
   <div class="column">
     <div class="column two">
       <div class="content">
-        <ul>
-          <li>
-            <a title="Settings" routerLink="/settings" routerLinkActive="active">Settings</a>
-          </li>
-          <!--<li>-->
+        <fieldset>
+          <legend>
+            <h2>{{ currentUser.username }}</h2>
+          </legend>
+          <ul>
+            <li>
+              <a title="Settings" routerLink="/settings" routerLinkActive="active">Settings</a>
+            </li>
+            <!--<li>-->
             <!--<a title="Custom lists" routerLink="/lobby" routerLinkActive="active">Custom lists</a>-->
-          <!--</li>-->
-          <!--if settings general/progress is checked-->
-          <li>
-            <a title="Score history" routerLink="/score-history" routerLinkActive="active">Your score history</a>
-          </li>
-        </ul>
+            <!--</li>-->
+            <!--if settings general/progress is checked-->
+            <li>
+              <a title="Score history" routerLink="/score-history" routerLinkActive="active">Your score history</a>
+            </li>
+          </ul>
+        </fieldset>
       </div>
     </div>
     <!--<div class="column two">-->

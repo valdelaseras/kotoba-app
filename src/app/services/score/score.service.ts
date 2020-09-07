@@ -32,9 +32,9 @@ export class ScoreService {
   }
 
   private retrieveScoreRecord(): void {
-    const scoreRecords = JSON.parse( localStorage.getItem('ktb-score-record') );
+    const scoreRecords = JSON.parse( localStorage.getItem('ktb-score-record') ) || [];
 
-    this.scoreRecords = scoreRecords.map( ( scoreRecord ) => new Score( scoreRecord ) ) || [];
+    this.scoreRecords = scoreRecords.map( ( scoreRecord ) => new Score( scoreRecord ) );
   }
 
   private saveScoreRecord(): void {

@@ -28,3 +28,8 @@ button[type=submit] {
 .stats > li:last-child {
   margin-bottom: 0;
 }
+
+.incorrect-answer {
+  position: relative;
+  top: 1rem;
+}

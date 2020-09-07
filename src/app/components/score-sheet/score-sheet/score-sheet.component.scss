@@ -1,0 +1,16 @@
+.single-entry-list > li {
+  display: inline-block;
+}
+
+.single-entry-list > li:first-child {
+  color: var(--quaternary-color);
+  padding-right: 2rem;
+}
+
+.answer-entry {
+  padding-right: 1rem;
+}
+
+li > span:first-child {
+  padding-right: 1rem;
+}

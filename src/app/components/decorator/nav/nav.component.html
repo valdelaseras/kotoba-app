@@ -21,9 +21,39 @@
   </ul>
 
   <div class="mobile-menu mobile-only">
-    <input type="checkbox" id="nav-checkbox" class="nav-checkbox">
+    <input type="checkbox" id="nav-checkbox" class="nav-checkbox" [(ngModel)]="menuIsOpen">
     <label for="nav-checkbox" class="nav-toggle">
-      <span>+</span>
+      <span></span>
+      <span></span>
+      <span></span>
     </label>
+    <div class="slide-in-menu">
+      <ul class="mobile-nav-list">
+        <li>
+          <a class="nav-link"
+             title="Lobby"
+             routerLink="/lobby"
+             routerLinkActive="active">Lobby</a>
+        </li>
+        <li>
+          <a class="nav-link"
+             title="Profile"
+             routerLink="/profile"
+             routerLinkActive="active">Profile</a>
+        </li>
+        <li>
+          <a class="nav-link"
+             title="Settings"
+             routerLink="/settings"
+             routerLinkActive="active">Settings</a>
+        </li>
+        <li>
+          <a class="nav-link"
+             title="About"
+             routerLink="/about"
+             routerLinkActive="active">About</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

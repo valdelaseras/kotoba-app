@@ -1,8 +1,7 @@
 <div id="scoresheet">
   <div class="column">
     <div class="content">
-      <h2>Score</h2>
-      <h3>Overview</h3>
+      <h1>Exam overview</h1>
     </div>
   </div>
   <div class="column">
@@ -12,9 +11,15 @@
             <legend>
               <h2>Your answers</h2>
             </legend>
-            <ul *ngFor="let entry of score.getEntries()">
-              <li>{{ entry.question }}</li>
-              <li *ngFor="let answer of entry.givenAnswers">{{ answer.entry }}</li>
+            <ul class="single-entry-list" *ngFor="let entry of score.getEntries()">
+              <li>
+                <span>Q:</span> {{ entry.question }}
+              </li>
+              <li>
+                <!--TODO: correct answers in green or something-->
+                <span>A:</span>
+                <span class="answer-entry" *ngFor="let answer of entry.givenAnswers">{{ answer.entry }}</span>
+              </li>
             </ul>
           </fieldset>
       </div>

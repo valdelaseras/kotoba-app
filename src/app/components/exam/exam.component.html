@@ -25,12 +25,12 @@
                       [disabled]="examForm.pristine || examForm.invalid">
                 Submit
               </button>
-              <div *ngIf="answer.dirty && answer.errors">
+              <div class="incorrect-answer" *ngIf="!answerCorrect">
+                <small class="invalid-color">This answer is incorrect</small>
+              </div>
+              <!--<div *ngIf="answer.dirty && answer.errors">-->
 
-              </div>
-              <div *ngIf="!answerCorrect">
-                This is not correct
-              </div>
+              <!--</div>-->
             </fieldset>
           </div>
         </form>
