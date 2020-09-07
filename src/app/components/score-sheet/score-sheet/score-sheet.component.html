@@ -10,9 +10,8 @@
       <div class="content">
           <fieldset *ngIf="score">
             <legend>
-              <h4>Your answers</h4>
+              <h2>Your answers</h2>
             </legend>
-
             <ul *ngFor="let entry of score.getEntries()">
               <li>{{ entry.question }}</li>
               <li *ngFor="let answer of entry.givenAnswers">{{ answer.entry }}</li>
@@ -24,11 +23,21 @@
       <div class="content">
         <fieldset>
           <legend>
-            <h4></h4>
+            <h2>Stats</h2>
           </legend>
-
           <ul>
-            <li></li>
+            <li>
+              <h4>Duration</h4>
+            </li>
+            <li>
+              <h4>Total questions</h4>
+            </li>
+            <li>
+              <h4>Wrong answers</h4>
+            </li>
+            <li>
+              <h4>Total score</h4>
+            </li>
           </ul>
         </fieldset>
       </div>

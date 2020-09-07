@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
+
 import { Exam } from '../../model/exam/exam.model';
+
+import { DataSetService } from '../dataset/data-set.service';
+
 import { IAvailableExam } from '../../model/interfaces/available-exam.interface';
 import { IExamSettings } from '../../model/interfaces/exam-settings.interface';
-import { DataSetService } from '../dataset/data-set.service';
 
 @Injectable({
   providedIn: 'root'

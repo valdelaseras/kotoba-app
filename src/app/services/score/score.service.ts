@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import {Score} from '../../model/score/score.model';
-import {SettingsService} from '../settings/settings.service';
+
+import { Score } from '../../model/score/score.model';
+
+import { SettingsService } from '../settings/settings.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScoreService {
-  private scoreRecords: Score[];
+  private scoreRecords: any[];
   private score: Score;
 
   constructor( private settingsService: SettingsService ) {
@@ -29,13 +31,13 @@ export class ScoreService {
     return this.scoreRecords;
   }
 
-  retrieveScoreRecord(): void {
+  private retrieveScoreRecord(): void {
     const scoreRecords = JSON.parse( localStorage.getItem('ktb-score-record') );
 
-    this.scoreRecords = scoreRecords || [];
+    this.scoreRecords = scoreRecords.map( ( scoreRecord ) => new Score( scoreRecord ) ) || [];
   }
 
-  saveScoreRecord(): void {
+  private saveScoreRecord(): void {
     this.scoreRecords.push( this.score );
     localStorage.setItem( 'ktb-score-record', JSON.stringify( this.scoreRecords ) );
   }

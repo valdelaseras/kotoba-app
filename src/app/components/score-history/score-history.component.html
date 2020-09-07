@@ -1,1 +1,23 @@
-<p>score-history works!</p>
+<div id="score-history">
+  <div class="column">
+    <div class="column">
+      <div class="content">
+        <h1>Score overview</h1>
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <fieldset>
+          <legend>
+            <h2>Your exam records</h2>
+          </legend>
+          <ul>
+            <li *ngFor="let record of records">
+              <a [routerLink]="['/score', record.timestamp]" title="">{{ record.timestamp | date: 'dd-MM-yyyy hh:mm:ss' }}</a>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>

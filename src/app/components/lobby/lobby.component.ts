@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { UserService } from '../../services/user/user.service';
-import { User } from '../../model/user/user.model';
-import { DataSetService } from '../../services/dataset/data-set.service';
-import { IAvailableExam } from '../../model/interfaces/available-exam.interface';
 import { Router} from '@angular/router';
+
+import { User } from '../../model/user/user.model';
+
+import { UserService } from '../../services/user/user.service';
+import { DataSetService } from '../../services/dataset/data-set.service';
 import { ExamService } from '../../services/exam/exam.service';
+import { SettingsService } from '../../services/settings/settings.service';
+
+import { IAvailableExam } from '../../model/interfaces/available-exam.interface';
 import { IExamSettings } from '../../model/interfaces/exam-settings.interface';
 import { IExamOptions } from '../../model/interfaces/exam-options.interface';
-import { SettingsService } from '../../services/settings/settings.service';
 import { ISettings } from '../../model/interfaces/settings.interface';
 
 @Component({

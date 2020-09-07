@@ -1,12 +1,17 @@
-import {IExamQuestionEntry} from '../interfaces/exam-question-entry.interface';
-import {IExamGivenAnswer} from '../interfaces/exam-given-answer.interface';
+import { IExamQuestionEntry } from '../interfaces/exam-question-entry.interface';
+import { IExamGivenAnswer } from '../interfaces/exam-given-answer.interface';
 
 export class Score {
   timestamp: string;
   private examEntries: IExamQuestionEntry[] = [];
 
-  constructor() {
-    this.timestamp = Date.now().toString( 10 );
+  constructor( jsonRecord?: { timestamp: string, examEntries: any[] } ) {
+    if ( jsonRecord ) {
+      this.timestamp = jsonRecord.timestamp;
+      this.examEntries = jsonRecord.examEntries;
+    } else {
+      this.timestamp = Date.now().toString( 10 );
+    }
   }
 
   addEntry( examEntry: IExamQuestionEntry ): void {

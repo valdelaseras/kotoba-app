@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IExamQuestion } from '../../model/interfaces/exam-question.interface';
 import { Router } from '@angular/router';
-import { ExamService } from '../../services/exam/exam.service';
+
+import { IExamQuestion } from '../../model/interfaces/exam-question.interface';
+import { IExamQuestionEntry } from '../../model/interfaces/exam-question-entry.interface';
+import { IExamGivenAnswer } from '../../model/interfaces/exam-given-answer.interface';
+
 import { Exam } from '../../model/exam/exam.model';
-import {IExamQuestionEntry} from '../../model/interfaces/exam-question-entry.interface';
-import {IExamGivenAnswer} from '../../model/interfaces/exam-given-answer.interface';
-import {Score} from '../../model/score/score.model';
-import {ScoreService} from '../../services/score/score.service';
+import { Score } from '../../model/score/score.model';
+
+import { ExamService } from '../../services/exam/exam.service';
+import { ScoreService } from '../../services/score/score.service';
 
 @Component({
   selector: 'app-exam',
@@ -74,9 +77,4 @@ export class ExamComponent implements OnInit {
   saveGivenAnswerEntry( ): void {
     this.currentExamQuestionEntry.givenAnswers.push( Object.assign({}, this.givenAnswer) );
   }
-
-  // resolveExamEnd(): void {
-    // TODO: new scoresheet( correctAnswers, incorrectAnswers )
-    // this.router.navigate(['score']);
-  // }
 }

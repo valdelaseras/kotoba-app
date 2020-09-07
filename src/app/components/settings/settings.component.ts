@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { SettingsService } from '../../services/settings/settings.service';
+
 import { ISettings } from '../../model/interfaces/settings.interface';
 import { IExamOptions } from '../../model/interfaces/exam-options.interface';
 import { IVisualOptions } from '../../model/interfaces/visual-options.interface';

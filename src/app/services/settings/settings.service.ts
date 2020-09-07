@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { ISettings } from '../../model/interfaces/settings.interface';
 import { IExamOptions } from '../../model/interfaces/exam-options.interface';
 import { IVisualOptions } from '../../model/interfaces/visual-options.interface';
