@@ -1,0 +1,63 @@
+<div id="exam">
+  <div class="column">
+    <div class="content">
+      <h2>{{ exam.title }}</h2>
+    </div>
+  </div>
+  <div class="column">
+    <div class="column two">
+      <div class="content">
+        <form #examForm="ngForm" id="exam-form" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <label for="question">{{ currentQuestion.question }}</label>
+              </legend>
+              <input id="question"
+                     required
+                     #answer="ngModel"
+                     name="answer"
+                     autocomplete="off"
+                     [(ngModel)]="givenAnswer.entry"
+                     [placeholder]="currentQuestion.placeholder"/>
+              <button type="submit"
+                      class="btn btn-primary"
+                      [disabled]="examForm.pristine || examForm.invalid">
+                Submit
+              </button>
+              <div *ngIf="answer.dirty && answer.errors">
+
+              </div>
+              <div *ngIf="!answerCorrect">
+                This is not correct
+              </div>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="column four">
+      <div class="content">
+        <fieldset>
+          <legend>
+            <h2>Stats</h2>
+          </legend>
+         <ul class="stats">
+           <li>
+             <h4>Progress</h4>
+             <span>{{ currentQuestionIndex + 1 }}</span> of <span>{{ exam.questionnaire.length }}</span>
+           </li>
+           <li>
+             <h4>Correct</h4>
+             <span>{{ score.numberOfCorrectAnswers() }}</span>
+
+             <h4>Incorrect</h4>
+             <span>{{ score.numberOfIncorrectAnswers() }}</span>
+           </li>
+         </ul>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+

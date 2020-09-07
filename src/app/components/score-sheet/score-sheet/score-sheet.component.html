@@ -1,0 +1,37 @@
+<div id="scoresheet">
+  <div class="column">
+    <div class="content">
+      <h2>Score</h2>
+      <h3>Overview</h3>
+    </div>
+  </div>
+  <div class="column">
+    <div class="column two">
+      <div class="content">
+          <fieldset *ngIf="score">
+            <legend>
+              <h4>Your answers</h4>
+            </legend>
+
+            <ul *ngFor="let entry of score.getEntries()">
+              <li>{{ entry.question }}</li>
+              <li *ngFor="let answer of entry.givenAnswers">{{ answer.entry }}</li>
+            </ul>
+          </fieldset>
+      </div>
+    </div>
+    <div class="column two">
+      <div class="content">
+        <fieldset>
+          <legend>
+            <h4></h4>
+          </legend>
+
+          <ul>
+            <li></li>
+          </ul>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>

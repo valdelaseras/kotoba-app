@@ -1,5 +1,14 @@
-TODO: secondary nav must be hidden in certain scenarios, like nav links (but I think should still be part of decorator)
-TODO: add ARIA labels and roles everywhere
+TODO: ARIA
 TODO: build some collapsible component with input checkbox that works in nav mobile and also for the settings page ( collapse the 3 setting content by default )
-TODO: clear(er) distinguishments between typography elements
-TODO: move secondary-nav to /decorator
+TODO: clear(er) difference between typography elements
+TODO: all components must of course be reusable with dynamic content etc. ( so you could reuse the login component anywhere, with different label titles, username/email, password etc. )
+TODO: seems to be a standard thing to remove the 'app-' prefixes from angular components as long as the tags don't clash with anything already existing? Double check
+
+TODO: complete katana dataset, not sure what I am missing but I am missing something.
+TODO: find kanji datasets somewhere? No way I'm doing it manually. Consider using https://wanakana.com/ ?
+
+TODO: Replace 'default' values in selects to whatever values they actually are
+
+TODO: 'back' in sec nav after exiting an exam produces errors because the questionnaire is lost at that point
+
+TODO: to lowercase all answers

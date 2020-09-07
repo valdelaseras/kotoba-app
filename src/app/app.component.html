@@ -1,7 +1,6 @@
-<app-nav></app-nav>
-
+<app-nav [hidden]="onLogin()"></app-nav>
 <main>
-  <app-secondary-nav></app-secondary-nav>
+  <app-secondary-nav [hidden]="onLogin()"></app-secondary-nav>
   <section tabindex="0" class="section">
     <div class="section-content">
       <div class="grid">
@@ -12,4 +11,4 @@
     </div>
   </section>
 </main>
-<app-footer></app-footer>
+<!--<app-footer [hidden]="onLogin()"></app-footer>-->

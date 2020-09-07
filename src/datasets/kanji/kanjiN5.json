@@ -1,0 +1,14 @@
+[
+  {
+    "kanji": "水",
+    "romaji": {
+      "kun": ["mizu", "mizuu"],
+      "on": ["sui"]
+    },
+    "kana": {
+        "kun": ["みず", "みず-"],
+        "on": ["スイ"]
+    },
+    "english": ["water"]
+  }
+]

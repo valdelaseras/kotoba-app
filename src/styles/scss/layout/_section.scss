@@ -1,11 +1,17 @@
 /*@start section*/
-section {
+.section {
   // height of navigation(s)
-  margin-top: 140px;
-  height: calc(100vh - 140px);
+  margin: 70px 0;
+  min-height: calc(100vh - 140px);
+}
+
+@media only screen and (min-width: 1024px) {
+  .section {
+    margin: 140px 0;
+    min-height: calc( 100vh - 280px );
+  }
 }
 /*@end section*/
-
 
 
 

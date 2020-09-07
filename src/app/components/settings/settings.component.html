@@ -1,0 +1,144 @@
+<div id="settings">
+  <div class="column">
+    <div class="content">
+        <h1>Settings</h1>
+    </div>
+  </div>
+  <div class="column">
+    <form (ngSubmit)="updateSettings()">
+      <div class="column two">
+        <div class="content">
+          <fieldset>
+            <legend>
+              <h2>Exams</h2>
+            </legend>
+            <h3>Incorrect answers</h3>
+            <p>
+              Set your preference on handling incorrectly answered questions.
+            </p>
+            <div class="form-group">
+              <label for="retry-select">Allowed retries per question</label>
+              <p>
+                The amount of retries allowed before moving on to the next question
+              </p>
+              <select [(ngModel)]="currentSettings.examSettings.retry" name="retry" id="retry-select">
+                <option value="{{ retryOption }}"
+                        title="{{ retryOption }}"
+                        *ngFor="let retryOption of examOptions.retry"
+                        [defaultSelected]="currentSettings.examSettings.retry === retryOption">
+                  {{ retryOption }}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="repeat-select">Repeat incorrectly answered questions</label>
+              <p>
+                BBy default, questions you answered incorrectly will be repeated again at a later,
+                random moment in your exam until you answer them correctly.
+                You may also choose to disable this.
+                <!--and add some other options later maybe-->
+              </p>
+              <select [(ngModel)]="currentSettings.examSettings.repeat " name="repeat" id="repeat-select">
+                <option value="{{ repeatOption }}"
+                        title="{{ repeatOption }}"
+                        *ngFor="let repeatOption of examOptions.repeat"
+                        [defaultSelected]="currentSettings.examSettings.repeat === repeatOption">
+                  {{ repeatOption }}
+                </option>
+              </select>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="column two">
+        <div class="content">
+          <fieldset>
+            <legend>
+              <h2>Visual preference</h2>
+            </legend>
+            <h3>Theme</h3>
+            <div class="form-group">
+              <label for="color-selection"></label>
+              <select [(ngModel)]="currentSettings.visualSettings.theme"
+                      name="theme"
+                      id="color-selection">
+                <option value="{{ themeOption }}"
+                        title="{{ themeOption }}"
+                        *ngFor="let themeOption of visualOptions.theme"
+                        [defaultSelected]="currentSettings.visualSettings.theme === themeOption">
+                  {{ themeOption }}
+                </option>
+              </select>
+            </div>
+
+            <h3>Text preference</h3>
+            <div class="form-group">
+              <label for="font-preference">Font family</label>
+              <select [(ngModel)]="currentSettings.visualSettings.font"
+                      name="font"
+                      id="font-preference">
+                <option value="{{ fontOption }}"
+                        title="{{ fontOption }}"
+                        *ngFor="let fontOption of visualOptions.font"
+                        [defaultSelected]="currentSettings.visualSettings.font === fontOption">
+                  {{ fontOption }}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="font-size">Font size</label>
+              <select [(ngModel)]="currentSettings.visualSettings.fontSize"
+                      name="font-size"
+                      id="font-size">
+                <option value="{{ fontSizeOption }}"
+                        title="{{ fontSizeOption }}"
+                        *ngFor="let fontSizeOption of visualOptions.fontSize"
+                        [defaultSelected]="currentSettings.visualSettings.fontSize === fontSizeOption">
+                  {{ fontSizeOption }}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <input type="checkbox"
+                     title="Font serif"
+                     id="font-serif"
+                     name="font-serif" [(ngModel)]="currentSettings.visualSettings.fontSerif">
+              <label for="font-serif">Check to enable Serif font</label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="column">
+        <div class="column two">
+          <div class="content">
+            <fieldset>
+              <legend>
+                <h2>General</h2>
+              </legend>
+              <h3>Your progress</h3>
+              <div class="form-group">
+                <input type="checkbox"
+                       title="Save local record of scores"
+                       id="history-record"
+                       name="record" [(ngModel)]="currentSettings.generalSettings.record">
+                <label for="history-record">Keep a local record of your scores</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+

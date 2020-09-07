@@ -1,0 +1,91 @@
+<div id="lobby" *ngIf="currentUser">
+
+  <div class="column">
+    <div class="column">
+      <div class="content">
+        <h1>Welcome {{ currentUser.username }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="column two">
+      <div class="column">
+        <div class="column two">
+          <div class="content">
+            <h2>Kana</h2>
+            <ul class="btn-group vertical">
+              <li *ngFor="let availableExam of availableExams">
+                <button class="btn btn-secondary" [ngClass]="selectedAvailableExam.id === availableExam.id ? 'active' : null"
+                        (click)="selectAvailableExam( availableExam )"
+                        title="{{ availableExam.title }}">{{ availableExam.title }}</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column two">
+      <div class="content">
+        <div class="selected-exam" *ngIf="selectedAvailableExam">
+          <form (ngSubmit)="submitSelectedExam()">
+            <fieldset>
+              <legend>
+                <h2>{{ selectedAvailableExam.title}} </h2>
+              </legend>
+              <h4>Exam settings</h4>
+              <p>
+                The settings below only affect the current exam.
+                To change your default settings, <a class="bold highlight" title="settings" routerLink="/settings">click here</a>.
+              </p>
+              <!--The retries and inc. answer repeating settings must reflect the global settings in profile > settings by default.-->
+              <!--Changing these settings in the lobby will then only apply to this current-->
+              <!--exam and global settings remain unchanged-->
+              <div class="form-group">
+                <label for="retry-select">Allowed retries per question</label>
+                <select id="retry-select"
+                        name="examSettings">
+                  <option *ngFor="let retryOption of examOptions.retry"
+                          value="{{ retryOption }}"
+                          title="{{ retryOption }}"
+                          [defaultSelected]="currentSettings.examSettings.retry === retryOption">{{ retryOption }}</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="repeat-select">Repeat incorrectly answered questions</label>
+                <p>
+                  By default, questions you answered incorrectly will be repeated again at a later,
+                  random moment in your exam until you answer them correctly.
+                  You may also choose to disable this.
+                  <!--and add some other options later maybe-->
+                </p>
+                <select id="repeat-select"
+                        name="examSettings">
+                  <option *ngFor="let repeatOption of examOptions.repeat"
+                          value="{{ repeatOption }}"
+                          title="{{ repeatOption}}"
+                          [defaultSelected]="currentSettings.examSettings.repeat">{{ repeatOption }}</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="method-select">Method</label>
+                <select id="method-select"
+                        name="examSettings"
+                        [(ngModel)]="examSettings.method">
+                  <option *ngFor="let method of selectedAvailableExam.methods"
+                          title="{{ method }}"
+                          value="{{ method }}">{{ method }}</option>
+                </select>
+              </div>
+              <button type="submit" title="Start exam" class="btn btn-primary">Start Exam</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
