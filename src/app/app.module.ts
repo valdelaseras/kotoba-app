@@ -15,13 +15,12 @@ import { LoginComponent } from './components/login/login.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { ScoreHistoryComponent } from './components/score-history/score-history.component';
 import { SecondaryNavComponent } from './components/decorator/secondary-nav/secondary-nav.component';
-import { AvailableExamsComponent } from './components/lobby/available-exams/available-exams.component';
 import { UserService } from './services/user/user.service';
 import { ExamService } from './services/exam/exam.service';
 import { DataSetService } from './services/dataset/data-set.service';
 import { ScoreSheetComponent } from './components/score-sheet/score-sheet/score-sheet.component';
 import { SettingsService } from './services/settings/settings.service';
-import {ExamRouteGuard, LoggedInRouteGuard} from './route-guard';
+import { ExamRouteGuard, LoggedInRouteGuard } from './route-guard';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -38,8 +37,7 @@ const components = [
   SettingsComponent,
   ScoreHistoryComponent,
   SecondaryNavComponent,
-  ScoreSheetComponent,
-  AvailableExamsComponent
+  ScoreSheetComponent
 ];
 
 @NgModule({

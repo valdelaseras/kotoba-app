@@ -11,44 +11,40 @@
   <div class="column">
     <div class="column two">
       <div class="column">
-        <div class="column two">
-          <div class="content">
-            <fieldset>
-              <legend>
-                <h2>Kana</h2>
-              </legend>
-              <ul class="btn-group vertical">
-                <li *ngFor="let availableExam of availableExams">
+        <div class="content">
+          <fieldset class="reduce-fs-padding">
+            <legend>
+              <h2>Kana</h2>
+            </legend>
+            <ul class="btn-group vertical">
+              <ng-container *ngFor="let availableExam of availableExams">
+                <li *ngIf="availableExam.category === 'kana'" >
                   <button class="btn btn-secondary" [ngClass]="selectedAvailableExam.id === availableExam.id ? 'active' : null"
                           (click)="selectAvailableExam( availableExam )"
                           title="{{ availableExam.title }}">{{ availableExam.title }}</button>
                 </li>
+              </ng-container>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="column">
+          <div class="content">
+            <fieldset class="reduce-fs-padding">
+              <legend>
+                <h2>Kanji</h2>
+              </legend>
+              <ul class="btn-group vertical">
+                <ng-container *ngFor="let availableExam of availableExams">
+                  <li *ngIf="availableExam.category === 'kanji'" >
+                    <button class="btn btn-secondary" [ngClass]="selectedAvailableExam.id === availableExam.id ? 'active' : null"
+                            (click)="selectAvailableExam( availableExam )"
+                            title="{{ availableExam.title }}">{{ availableExam.title }}</button>
+                  </li>
+                </ng-container>
               </ul>
             </fieldset>
           </div>
         </div>
-        <!--<div class="column two">-->
-          <!--<div class="content">-->
-            <!--<h2>Kanji</h2>-->
-            <!--<ul class="btn-group vertical">-->
-              <!--<li>-->
-                <!--<button class="btn btn-secondary">Kanji N5</button>-->
-              <!--</li>-->
-              <!--<li>-->
-                <!--<button class="btn btn-secondary">Kanji N4</button>-->
-              <!--</li>-->
-              <!--<li>-->
-                <!--<button class="btn btn-secondary">Kanji N3</button>-->
-              <!--</li>-->
-              <!--<li>-->
-                <!--<button class="btn btn-secondary">Kanji N2</button>-->
-              <!--</li>-->
-              <!--<li>-->
-                <!--<button class="btn btn-secondary">Kanji N1</button>-->
-              <!--</li>-->
-            <!--</ul>-->
-          <!--</div>-->
-        <!--</div>-->
       </div>
     </div>
 
@@ -60,10 +56,14 @@
               <legend>
                 <h2>{{ selectedAvailableExam.title}} </h2>
               </legend>
+              <small class="highlight exam-description">
+                {{ selectedAvailableExam.description }}
+              </small>
+
               <h4>Exam settings</h4>
               <p>
                 The settings below only affect the current exam.
-                To change your default global settings, <a class="bold highlight" title="settings" routerLink="/settings">click here</a>.
+                To change your default global settings,  <a class="bold highlight" title="settings" routerLink="/settings">click here</a>.
               </p>
               <!--The retries and inc. answer repeating settings must reflect the global settings in profile > settings by default.-->
               <!--Changing these settings in the lobby will then only apply to this current-->

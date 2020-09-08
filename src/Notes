@@ -1,4 +1,4 @@
-TODO: ARIA
+TODO: ARIA, css browser prefixes
 TODO: build some collapsible component with input checkbox that works in nav mobile and also for the settings page ( collapse the 3 setting content by default )
 TODO: clear(er) difference between typography elements
 TODO: all components must of course be reusable with dynamic content etc. ( so you could reuse the login component anywhere, with different label titles, username/email, password etc. )
@@ -8,7 +8,7 @@ TODO: complete katana dataset, not sure what I am missing but I am missing somet
 TODO: find kanji datasets somewhere? No way I'm doing it manually. Consider using https://wanakana.com/ ?
 
 TODO: Replace 'default' values in selects to whatever values they actually are
-
+TODO: look into ngtemplate / ngcontainer / ngcontent
 
 
 build PWA:

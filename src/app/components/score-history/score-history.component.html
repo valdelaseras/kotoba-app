@@ -11,8 +11,10 @@
           <legend>
             <h2>Your exams</h2>
           </legend>
-          <ul>
-            <!--TODO: add exam title-->
+          <p *ngIf="!exams.length">
+            You don't have an exam history yet
+          </p>
+          <ul *ngIf="exams.length">
             <li *ngFor="let exam of exams">
               <a [routerLink]="['/score', exam.timestamp]" title="">{{ exam.title }} - {{ exam.timestamp | date: 'dd-MM-yyyy hh:mm:ss' }}</a>
             </li>

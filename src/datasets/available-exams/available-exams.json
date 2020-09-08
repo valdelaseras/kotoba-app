@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "category": "kana",
     "title": "Hiragana",
     "description": "Test your knowledge of hiragana. If you are a beginner in learning to read and write Japanese, this is a good place to start!",
     "dataSets": [
@@ -13,6 +14,7 @@
     ]
   }, {
     "id": 1,
+    "category": "kana",
     "title": "Katakana",
     "description": "Test your katakana knowledge.",
     "dataSets": [
@@ -25,6 +27,7 @@
     ]
   }, {
     "id": 2,
+    "category": "kana",
     "title": "All kana",
     "description": "If you feel you have sufficient knowledge of both hiragana and katakana, this is the perfect exam to test your fluency.",
     "dataSets": [
@@ -35,6 +38,106 @@
       "Romaji to kana",
       "Kana to romaji",
       "Shuffle"
+    ]
+  }, {
+    "id": 3,
+    "category": "kanji",
+    "title": "Kanji N5",
+    "description": "Kanji N5",
+    "dataSets": [
+      "kanjiN5"
+    ],
+    "methods": [
+      "Kanji to romaji",
+      "Romaji to kanji",
+      "Kanji to English",
+      "English to kanji",
+      "Shuffle kanji & romaji",
+      "Shuffle all"
+    ]
+  }, {
+    "id": 4,
+    "category": "kanji",
+    "title": "Kanji N4",
+    "description": "Kanji N4",
+    "dataSets": [
+      "kanjiN4"
+    ],
+    "methods": [
+      "Kanji to romaji",
+      "Romaji to kanji",
+      "Kanji to English",
+      "English to kanji",
+      "Shuffle kanji & romaji",
+      "Shuffle all"
+    ]
+  }, {
+    "id": 5,
+    "category": "kanji",
+    "title": "Kanji N3",
+    "description": "Kanji N3",
+    "dataSets": [
+      "kanjiN3"
+    ],
+    "methods": [
+      "Kanji to romaji",
+      "Romaji to kanji",
+      "Kanji to English",
+      "English to kanji",
+      "Shuffle kanji & romaji",
+      "Shuffle all"
+    ]
+  }, {
+    "id": 6,
+    "category": "kanji",
+    "title": "Kanji N2",
+    "description": "Kanji N2",
+    "dataSets": [
+      "kanjiN2"
+    ],
+    "methods": [
+      "Kanji to romaji",
+      "Romaji to kanji",
+      "Kanji to English",
+      "English to kanji",
+      "Shuffle kanji & romaji",
+      "Shuffle all"
+    ]
+  }, {
+    "id": 7,
+    "category": "kanji",
+    "title": "Kanji N1",
+    "description": "Kanji N1",
+    "dataSets": [
+      "kanjiN1"
+    ],
+    "methods": [
+      "Kanji to romaji",
+      "Romaji to kanji",
+      "Kanji to English",
+      "English to kanji",
+      "Shuffle kanji & romaji",
+      "Shuffle all"
+    ]
+  }, {
+    "id": 8,
+    "category": "kanji",
+    "title": "All kanji",
+    "description": "Kanji N5 to N1",
+    "dataSets": [
+      "kanjiN5",
+      "kanjiN4",
+      "kanjiN3",
+      "kanjiN2",
+      "kanjiN1"
+    ],
+    "methods": [
+      "Kanji to romaji",
+      "Romaji to kanji",
+      "Kanji to English",
+      "English to kanji",
+      "Shuffle kanji & romaji",
+      "Shuffle all"
     ]
   }
 ]

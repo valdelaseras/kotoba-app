@@ -128,13 +128,4 @@ export class Exam {
       questionnaire[random] = shuffledQuestionnaire;
     }
   }
-
-  private addToQuestionnaire( examSettings: IExamSettings, remainingQuestionnaire, question ): void {
-    // remainingQuestionnaire = questionnaire - correctly answered questions so far
-    if ( examSettings.repeat === 'Repeat until answered correctly') {
-      remainingQuestionnaire.push( question );
-      // add wrongly answered question to remainingQuestionnaire
-      this.shuffleOrder( remainingQuestionnaire );
-    }
-  }
 }
