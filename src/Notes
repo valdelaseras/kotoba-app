@@ -8,3 +8,14 @@ TODO: complete katana dataset, not sure what I am missing but I am missing somet
 TODO: find kanji datasets somewhere? No way I'm doing it manually. Consider using https://wanakana.com/ ?
 
 TODO: Replace 'default' values in selects to whatever values they actually are
+
+
+
+build PWA:
+_____________
+ng build --prod
+http-server -p 8080 -c-1 dist/kotoba-app
+
+serve and allow access via ip:
+_____________
+ng serve --host 0.0.0.0
