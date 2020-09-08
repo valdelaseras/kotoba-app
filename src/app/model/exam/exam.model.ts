@@ -1,7 +1,7 @@
 import { IExamSettings } from '../interfaces/exam-settings.interface';
 import { IExamQuestion } from '../interfaces/exam-question.interface';
 import { IDataEntry } from '../interfaces/data-entry.interface';
-import {IExamGivenAnswer} from '../interfaces/exam-given-answer.interface';
+import { IExamGivenAnswer } from '../interfaces/exam-given-answer.interface';
 
 const PENALTY_WEIGHT = 10;
 
