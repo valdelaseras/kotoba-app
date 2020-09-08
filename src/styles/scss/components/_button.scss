@@ -14,6 +14,7 @@ button {
   padding: .2rem;
 }
 
+.btn.btn-primary.btn-main[disabled],
 .btn.btn-primary[disabled],
 .btn.btn-secondary[disabled] {
   background-color: var(--disabled-bg-color);
@@ -21,6 +22,10 @@ button {
   color: var(--disabled-txt-color);
 }
 
+.btn.btn-primary.bnt-main[disbled]:hover,
+.btn.btn-primary.bnt-main[disbled]:focus,
+.btn.btn-primary.bnt-main[disbled]:focus-within,
+.btn.btn-primary.bnt-main[disbled]:active,
 .btn.btn-primary[disabled]:hover,
 .btn.btn-primary[disabled]:focus,
 .btn.btn-primary[disabled]:active,
@@ -107,4 +112,12 @@ button {
   border-color: var(--quaternary-color);
 }
 
+.btn.btn-primary.btn-main {
+  display: block;
+  width: 100%;
+  margin: 0;
+  background-color: var(--quaternary-color);
+  border: 1px solid transparent;
+  color: var(--primary-color);
+}
 

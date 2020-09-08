@@ -20,41 +20,53 @@
                      autocomplete="off"
                      [(ngModel)]="givenAnswer.entry"
                      [placeholder]="currentQuestion.placeholder"/>
+              <div class="column info-bar">
+                <div class="column two">
+                  <small>{{ attempt }} / {{ allowedRetries || '∞'}}</small>
+                </div>
+                <div class="column two">
+                  <div class="incorrect-answer" *ngIf="givenAnswer.valid === false">
+                    <small class="invalid-color">This answer is incorrect</small>
+                  </div>
+                </div>
+              </div>
               <button type="submit"
-                      class="btn btn-primary"
+                      class="btn btn-primary btn-main"
                       [disabled]="examForm.pristine || examForm.invalid">
                 Submit
               </button>
-              <div *ngIf="answer.dirty && answer.errors">
-
-              </div>
-              <div *ngIf="!answerCorrect">
-                This is not correct
-              </div>
             </fieldset>
           </div>
         </form>
       </div>
     </div>
-    <div class="column four">
+    <div class="column two">
       <div class="content">
         <fieldset>
           <legend>
             <h2>Stats</h2>
           </legend>
-         <ul class="stats">
-           <li>
-             <h4>Progress</h4>
-             <span>{{ currentQuestionIndex + 1 }}</span> of <span>{{ exam.questionnaire.length }}</span>
-           </li>
-           <li>
-             <h4>Correct</h4>
-             <span>{{ score.numberOfCorrectAnswers() }}</span>
+           <ul class="stats">
+             <li>
+               <h4>Method</h4>
+               <span>{{ exam.settings.method }}</span>
+             </li>
+             <li>
+               <h4>Progress</h4>
+               <span>{{ exam.currentQuestionNumber() }}</span> of <span>{{ exam.getQuestions().length }}</span>
+             </li>
+             <!--<li>-->
+               <!--<h4>Attempts</h4>-->
+               <!--<span>{{ attempt }} / {{ allowedRetries || '∞'}}</span>-->
+             <!--</li>-->
+             <li>
+               <h4>Correct</h4>
+               <span>{{ exam.numberOfCorrectAnswers() }}</span>
 
-             <h4>Incorrect</h4>
-             <span>{{ score.numberOfIncorrectAnswers() }}</span>
-           </li>
-         </ul>
+               <h4>Incorrect</h4>
+               <span>{{ exam.numberOfIncorrectAnswers() }}</span>
+             </li>
+           </ul>
         </fieldset>
       </div>
     </div>

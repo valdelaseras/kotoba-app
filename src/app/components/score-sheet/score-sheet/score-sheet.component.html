@@ -1,21 +1,29 @@
 <div id="scoresheet">
   <div class="column">
     <div class="content">
-      <h2>Score</h2>
-      <h3>Overview</h3>
+      <h1>Exam overview</h1>
     </div>
   </div>
   <div class="column">
     <div class="column two">
       <div class="content">
-          <fieldset *ngIf="score">
+          <fieldset *ngIf="exam">
             <legend>
-              <h4>Your answers</h4>
+              <h2>Your answers</h2>
             </legend>
-
-            <ul *ngFor="let entry of score.getEntries()">
-              <li>{{ entry.question }}</li>
-              <li *ngFor="let answer of entry.givenAnswers">{{ answer.entry }}</li>
+            <ul class="single-entry-list" *ngFor="let entry of exam.getQuestions()">
+              <li>
+                <span>Q:</span> {{ entry.question }}
+              </li>
+              <li>
+                <!--TODO: correct answers in green or something-->
+                <span>A:</span>
+                <span class="answer-entry"
+                      [ngClass]="{'correct-answer': answer.valid }"
+                      *ngFor="let answer of entry.givenAnswers">
+                  {{ answer.entry }}
+                </span>
+              </li>
             </ul>
           </fieldset>
       </div>
@@ -24,11 +32,63 @@
       <div class="content">
         <fieldset>
           <legend>
-            <h4></h4>
+            <h2>Stats</h2>
           </legend>
-
-          <ul>
-            <li></li>
+          <ul class="stats">
+            <li>
+              <span>{{ exam.settings.method }}</span>
+            </li>
+            <li>
+              <div class="column">
+                <div class="column two">
+                  <h4>Date</h4>
+                </div>
+                <div class="column two">
+                  <span>{{ exam.timestamp | date: 'dd-MM-yyyy' }}</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="column two">
+                <h4>Duration</h4>
+              </div>
+              <div class="column two">
+                <div class="column two">
+                  <!--TODO: is placeholder, need actual time duration here-->
+                  <span>{{ exam.timestamp | date: 'hh:mm:ss' }}</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="column">
+                <div class="column two">
+                  <h4>Total questions</h4>
+                </div>
+                <div class="column two">
+                  <span>{{ exam.getQuestions().length }}</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="column">
+                <div class="column two">
+                  <h4>Wrong answers</h4>
+                </div>
+                <div class="column two">
+                  <span>{{ exam.numberOfIncorrectAnswers() }}</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="column">
+                <div class="column two">
+                  <h4>Total score</h4>
+                </div>
+                <div class="column two">
+                  <span>{{ exam.getScore() }}%</span>
+                </div>
+              </div>
+            </li>
           </ul>
         </fieldset>
       </div>

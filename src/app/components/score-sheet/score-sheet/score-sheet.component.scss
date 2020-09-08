@@ -1,0 +1,32 @@
+.single-entry-list > li {
+  display: inline-block;
+}
+
+.single-entry-list > li:first-child {
+  color: var(--quaternary-color);
+  margin-right: 2rem;
+}
+
+.answer-entry {
+  margin-right: 1rem;
+}
+
+li > span:first-child {
+  margin-right: 1rem;
+}
+
+.stats > li h4 {
+  display: inline-block;
+}
+
+.stats > li {
+  margin-bottom: 2rem;
+}
+
+.stats > li:last-child {
+  margin-bottom: 0;
+}
+
+.correct-answer {
+  // do something
+}
