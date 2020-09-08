@@ -5,6 +5,7 @@
 .single-entry-list > li:first-child {
   color: var(--quaternary-color);
   margin-right: 2rem;
+  width: 100px;
 }
 
 .answer-entry {
@@ -27,6 +28,7 @@ li > span:first-child {
   margin-bottom: 0;
 }
 
-.correct-answer {
-  // do something
+.incorrect-answer {
+  text-decoration: underline;
+  color: var(--invalid-color);
 }

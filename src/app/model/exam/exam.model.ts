@@ -1,9 +1,9 @@
 import { IExamSettings } from '../interfaces/exam-settings.interface';
 import { IExamQuestion } from '../interfaces/exam-question.interface';
 import { IDataEntry } from '../interfaces/data-entry.interface';
-import {IExamGivenAnswer} from '../interfaces/exam-given-answer.interface';
+import { IExamGivenAnswer } from '../interfaces/exam-given-answer.interface';
 
-const PENALTY_WEIGHT = 10;
+const PENALTY_WEIGHT = 5;
 
 export class Exam {
   timestamp: string;
@@ -68,7 +68,7 @@ export class Exam {
     const baseScore = 100 - ((this.getQuestions( false ).length / this.getQuestions().length) * 100);
     const penalty = ( this.numberOfIncorrectAnswers() / this.numberOfCorrectAnswers()) * 100;
 
-    return baseScore - ( penalty / PENALTY_WEIGHT );
+    return Math.round( baseScore - ( penalty / PENALTY_WEIGHT ));
   }
 
   incrementQuestion(): void {

@@ -19,10 +19,8 @@
                 <!--TODO: correct answers in green or something-->
                 <span>A:</span>
                 <span class="answer-entry"
-                      [ngClass]="{'correct-answer': answer.valid }"
-                      *ngFor="let answer of entry.givenAnswers">
-                  {{ answer.entry }}
-                </span>
+                      [ngClass]="{'incorrect-answer': !answer.valid }"
+                      *ngFor="let answer of entry.givenAnswers">{{ answer.entry }}</span>
               </li>
             </ul>
           </fieldset>
