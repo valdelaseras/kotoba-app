@@ -2,17 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { IExamQuestion } from '../../model/interfaces/exam-question.interface';
-import { IExamQuestionEntry } from '../../model/interfaces/exam-question-entry.interface';
 import { IExamGivenAnswer } from '../../model/interfaces/exam-given-answer.interface';
-import { ISettings } from '../../model/interfaces/settings.interface';
+import { IExamSettings } from '../../model/interfaces/exam-settings.interface';
 
 import { Exam } from '../../model/exam/exam.model';
-import { Score } from '../../model/score/score.model';
 
 import { ExamService } from '../../services/exam/exam.service';
-import { ScoreService } from '../../services/score/score.service';
-import { SettingsService } from '../../services/settings/settings.service';
-import {IExamSettings} from '../../model/interfaces/exam-settings.interface';
 
 @Component({
   selector: 'app-exam',
@@ -21,79 +16,67 @@ import {IExamSettings} from '../../model/interfaces/exam-settings.interface';
 })
 export class ExamComponent implements OnInit {
   exam: Exam;
-  score: Score;
-  currentQuestionIndex = 0;
   currentQuestion: IExamQuestion;
-  currentExamQuestionEntry: IExamQuestionEntry;
   givenAnswer: IExamGivenAnswer = {
     entry: undefined,
-    valid: false
+    valid: undefined
   };
-  answerCorrect = true;
   currentSettings: IExamSettings;
   allowedRetries: number;
   attempt = 0;
 
   constructor( private examService: ExamService,
-               private scoreService: ScoreService,
                private router: Router ) {
-    this.exam = this.examService.currentExam;
+    this.exam = this.examService.getExam();
     this.currentSettings = this.exam.settings;
     this.allowedRetries = this.getAllowedRetries( this.currentSettings );
-    this.score = new Score();
   }
 
   ngOnInit(): void {
-    this.currentQuestion = this.exam.questionnaire[ this.currentQuestionIndex];
-    this.initExamQuestionEntry( this.currentQuestion );
+    this.currentQuestion = this.exam.getQuestion();
   }
 
   submitForm(): void {
-    this.givenAnswer.valid = this.answerIsCorrect();
+    this.givenAnswer.valid = this.exam.answerIsCorrect( this.givenAnswer.entry );
     this.saveGivenAnswerEntry();
 
     if ( this.givenAnswer.valid ) {
-      this.givenAnswer.entry = undefined;
+      this.resetGivenAnswer();
       this.updateQuestion();
-    } else if ( !this.givenAnswer.valid ){
+    } else if ( !this.givenAnswer.valid ) {
       this.attempt += 1;
       if ( this.attempt === this.allowedRetries ) {
+        this.resolveQuestionRepeat();
         this.updateQuestion();
       }
     }
   }
 
-  answerIsCorrect(): boolean {
-    this.answerCorrect = this.currentQuestion.answer === this.givenAnswer.entry;
-    return this.answerCorrect;
+  resetGivenAnswer(): void {
+    this.givenAnswer = {
+      entry: undefined,
+      valid: undefined
+    };
   }
 
   updateQuestion(): void {
-    if ( this.currentQuestionIndex + 1 >= this.exam.questionnaire.length ) {
-      this.scoreService.setScore( this.score );
-      this.router.navigate(['score', this.score.timestamp]);
+    if ( this.exam.isLastQuestion() ) {
+      this.examService.saveExam( this.exam );
+      this.router.navigate(['score', this.exam.timestamp]);
     } else {
-      this.currentQuestion = this.exam.questionnaire[ this.currentQuestionIndex += 1];
-      this.initExamQuestionEntry( this.currentQuestion );
+      this.exam.incrementQuestion();
+      this.currentQuestion = this.exam.getQuestion();
+      this.resetGivenAnswer();
     }
 
     this.attempt = 0;
   }
 
-  initExamQuestionEntry( currentQuestion: IExamQuestion ): void {
-    this.currentExamQuestionEntry = {
-      question: currentQuestion.question,
-      answer: currentQuestion.answer,
-      givenAnswers: [],
-    };
-    this.score.addEntry( this.currentExamQuestionEntry );
-  }
-
   saveGivenAnswerEntry( ): void {
-    this.currentExamQuestionEntry.givenAnswers.push( Object.assign({}, this.givenAnswer) );
+    this.currentQuestion.givenAnswers.push( Object.assign({}, this.givenAnswer) );
   }
 
-  // TODO: whe refactoring, move this to Exam model
+  // TODO: when refactoring, move this to Exam model
   getAllowedRetries( examSettings: IExamSettings ): number {
     if ( examSettings.retry === 'None') {
       return this.allowedRetries = 1;
@@ -106,6 +89,10 @@ export class ExamComponent implements OnInit {
     }
   }
 
-  // TODO: whe refactoring, move this to Exam model
-  // resolveQuestionRepeat(){}
+  // TODO: when refactoring, move this to Exam model
+  resolveQuestionRepeat(): void {
+    if ( this.exam.settings.repeat === 'Repeat until answered correctly') {
+      this.exam.appendQuestion( this.currentQuestion );
+    }
+  }
 }

@@ -21,8 +21,7 @@ import { ExamService } from './services/exam/exam.service';
 import { DataSetService } from './services/dataset/data-set.service';
 import { ScoreSheetComponent } from './components/score-sheet/score-sheet/score-sheet.component';
 import { SettingsService } from './services/settings/settings.service';
-import { ScoreService } from './services/score/score.service';
-import { RouteGuard } from './route-guard';
+import {ExamRouteGuard, LoggedInRouteGuard} from './route-guard';
 
 const components = [
   AppComponent,
@@ -55,8 +54,8 @@ const components = [
     ExamService,
     SettingsService,
     DataSetService,
-    ScoreService,
-    RouteGuard
+    ExamRouteGuard,
+    LoggedInRouteGuard
   ],
   bootstrap: [AppComponent]
 })

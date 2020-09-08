@@ -13,8 +13,8 @@
           </legend>
           <ul>
             <!--TODO: add exam title-->
-            <li *ngFor="let record of records">
-              <a [routerLink]="['/score', record.timestamp]" title="">{{ record.timestamp | date: 'dd-MM-yyyy hh:mm:ss' }}</a>
+            <li *ngFor="let exam of exams">
+              <a [routerLink]="['/score', exam.timestamp]" title="">{{ exam.title }} - {{ exam.timestamp | date: 'dd-MM-yyyy hh:mm:ss' }}</a>
             </li>
           </ul>
         </fieldset>

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { Score } from '../../../model/score/score.model';
-
-import { ScoreService } from '../../../services/score/score.service';
+import {ExamService} from '../../../services/exam/exam.service';
+import {Exam} from '../../../model/exam/exam.model';
 
 @Component({
   selector: 'app-scoresheet',
@@ -11,12 +9,12 @@ import { ScoreService } from '../../../services/score/score.service';
   styleUrls: ['./score-sheet.component.scss']
 })
 export class ScoreSheetComponent implements OnInit {
-  score: Score;
+  exam: Exam;
 
-  constructor( private scoreService: ScoreService, private route: ActivatedRoute ) {}
+  constructor( private examService: ExamService, private route: ActivatedRoute ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe( paramMap => this.score = this.scoreService.getScore( paramMap.get( 'timestamp' ) ) );
+    this.route.paramMap.subscribe( paramMap => this.exam = this.examService.getExam( paramMap.get( 'timestamp' ) ) );
   }
   // TODO: if user has local record disabled, throw local storage scoresheet away after navigating away from score sheet
 }

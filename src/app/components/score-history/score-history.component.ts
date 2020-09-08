@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-
-import { ScoreService } from '../../services/score/score.service';
-import {Score} from '../../model/score/score.model';
+import { ExamService } from '../../services/exam/exam.service';
+import { Exam } from '../../model/exam/exam.model';
 
 @Component({
   selector: 'app-score-history',
@@ -9,8 +8,9 @@ import {Score} from '../../model/score/score.model';
   styleUrls: ['./score-history.component.scss']
 })
 export class ScoreHistoryComponent {
-  records: Score[];
-  constructor( private scoreService: ScoreService ) {
-    this.records = this.scoreService.getScoreRecords();
+  exams: Exam[];
+  constructor( private examService: ExamService ) {
+    this.exams = this.examService.getExams();
   }
 }
+
