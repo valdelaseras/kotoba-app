@@ -8,7 +8,3 @@ TODO: complete katana dataset, not sure what I am missing but I am missing somet
 TODO: find kanji datasets somewhere? No way I'm doing it manually. Consider using https://wanakana.com/ ?
 
 TODO: Replace 'default' values in selects to whatever values they actually are
-
-TODO: 'back' in sec nav after exiting an exam produces errors because the questionnaire is lost at that point
-
-TODO: to lowercase all answers

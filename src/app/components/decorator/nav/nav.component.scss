@@ -35,7 +35,7 @@
 
 .nav-checkbox {
   height: 28px;
-  width: 40px;
+  width: 35px;
   visibility: hidden;
 }
 
@@ -45,16 +45,16 @@
 
 .nav-toggle > span {
   display: block;
-  width: 40px;
-  height: 2px;
+  width: 35px;
+  height: 3px;
   background-color: var(--secondary-color);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   transition: all 350ms ease-in-out;
 }
 
 .nav-toggle > span:last-child {
   margin-bottom: 0;
-  width: 20px;
+  width: 15px;
   transform: translateX(20px);
 }
 
