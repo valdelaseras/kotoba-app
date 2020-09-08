@@ -1,5 +1,14 @@
+// TODO: Maybe consider making this smaller after all.
+//  If the label would reflect some English word(s),
+//  it would look pretty messed up likely
 legend label {
-  font-size: 2rem;
+  font-size: 5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  legend label {
+    font-size: 4rem;
+  }
 }
 
 input {

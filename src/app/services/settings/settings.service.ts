@@ -22,7 +22,7 @@ export class SettingsService {
     } else {
       this.settings = {
         examSettings: {
-          retry: 'Two retries',
+          retry: 'Twice',
           repeat: 'Repeat until answered correctly',
         },
 
@@ -52,7 +52,7 @@ export class SettingsService {
 
   getExamOptions(): IExamOptions {
     return  {
-      retry: ['None', 'One retry', 'Two retries', 'Three retries', 'Infinite retries'],
+      retry: ['None', 'Once', 'Twice', 'Infinite retries'],
       repeat: ['Repeat until answered correctly', 'Never repeat']
     };
   }

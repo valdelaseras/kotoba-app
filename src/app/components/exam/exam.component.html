@@ -48,6 +48,10 @@
              <span>{{ currentQuestionIndex + 1 }}</span> of <span>{{ exam.questionnaire.length }}</span>
            </li>
            <li>
+             <h4>Attempts</h4>
+             <span>{{ attempt }} / {{ allowedRetries || '∞'}}</span>
+           </li>
+           <li>
              <h4>Correct</h4>
              <span>{{ score.numberOfCorrectAnswers() }}</span>
 

@@ -71,11 +71,11 @@
               <div class="form-group">
                 <label for="retry-select">Allowed retries per question</label>
                 <select id="retry-select"
-                        name="examSettings">
+                        name="retry-setting"
+                        [(ngModel)]="examSettings.retry">
                   <option *ngFor="let retryOption of examOptions.retry"
                           value="{{ retryOption }}"
-                          title="{{ retryOption }}"
-                          [defaultSelected]="currentSettings.examSettings.retry === retryOption">{{ retryOption }}</option>
+                          title="{{ retryOption }}">{{ retryOption }}</option>
                 </select>
               </div>
 
@@ -88,18 +88,18 @@
                   <!--and add some other options later maybe-->
                 </p>
                 <select id="repeat-select"
-                        name="examSettings">
+                        name="repeat-setting"
+                        [(ngModel)]="examSettings.repeat">
                   <option *ngFor="let repeatOption of examOptions.repeat"
                           value="{{ repeatOption }}"
-                          title="{{ repeatOption}}"
-                          [defaultSelected]="currentSettings.examSettings.repeat">{{ repeatOption }}</option>
+                          title="{{ repeatOption}}">{{ repeatOption }}</option>
                 </select>
               </div>
 
               <div class="form-group">
                 <label for="method-select">Method</label>
                 <select id="method-select"
-                        name="examSettings"
+                        name="method-setting"
                         [(ngModel)]="examSettings.method">
                   <option *ngFor="let method of selectedAvailableExam.methods"
                           title="{{ method }}"
