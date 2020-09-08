@@ -22,6 +22,8 @@ import { DataSetService } from './services/dataset/data-set.service';
 import { ScoreSheetComponent } from './components/score-sheet/score-sheet/score-sheet.component';
 import { SettingsService } from './services/settings/settings.service';
 import {ExamRouteGuard, LoggedInRouteGuard} from './route-guard';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const components = [
   AppComponent,
@@ -47,7 +49,8 @@ const components = [
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     UserService,
