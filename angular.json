@@ -33,7 +33,9 @@
               "src/styles/scss/light-theme.scss",
               "src/styles/scss/dark-theme.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/hammerjs/hammer.js"
+            ]
           },
           "configurations": {
             "production": {
