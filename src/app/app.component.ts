@@ -18,4 +18,8 @@ export class AppComponent implements OnInit {
   onLogin(): boolean {
     return this.router.url.includes('login');
   }
+
+  onActivate(): void {
+    window.scroll(0, 0 );
+  }
 }

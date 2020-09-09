@@ -56,15 +56,14 @@
               <legend>
                 <h2>{{ selectedAvailableExam.title}} </h2>
               </legend>
-              <small class="highlight exam-description">
+              <small class="highlight">
                 {{ selectedAvailableExam.description }}
               </small>
-
-              <h4>Exam settings</h4>
               <p>
                 The settings below only affect the current exam.
                 To change your default global settings,  <a class="bold highlight" title="settings" routerLink="/settings">click here</a>.
               </p>
+              <h4>Exam settings</h4>
               <!--The retries and inc. answer repeating settings must reflect the global settings in profile > settings by default.-->
               <!--Changing these settings in the lobby will then only apply to this current-->
               <!--exam and global settings remain unchanged-->

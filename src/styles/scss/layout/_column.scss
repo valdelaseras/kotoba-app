@@ -1,20 +1,40 @@
 /* @start column */
+.column {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+}
+
+.column::after {
+  content: "";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.column.column-mobile.two {
+  width: 50%;
+}
+
+.column.column-mobile.three {
+  width: 33.33%;
+}
+
+.column.column-mobile.three.b {
+  width: 66.66%;
+}
+
+.column.column-mobile.four.a {
+  width: 25%;
+}
+
+.column.column-mobile.four.c {
+  width: 75%;
+}
+
 @media only screen and ( min-width: $large-screen ) {
-    .column {
-        width: 100%;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        float: left;
-    }
-
-    .column::after {
-        content: "";
-        clear: both;
-        display: block;
-        height: 0;
-        visibility: hidden;
-    }
-
     .column.phi.a {
         width: 38%;
     }

@@ -36,6 +36,10 @@ export class ExamComponent implements OnInit {
     this.currentQuestion = this.exam.getQuestion();
   }
 
+  onResize(): void {
+    window.scroll(0, 0 );
+  }
+
   submitForm(): void {
     this.givenAnswer.valid = this.exam.answerIsCorrect( this.givenAnswer.entry );
     this.saveGivenAnswerEntry();

@@ -5,10 +5,10 @@
     <div class="section-content">
       <div class="grid">
         <div class="column">
-          <router-outlet></router-outlet>
+          <router-outlet (activate)="onActivate()"></router-outlet>
         </div>
       </div>
     </div>
   </section>
 </main>
-<!--<app-footer [hidden]="onLogin()"></app-footer>-->
+<app-footer [hidden]="onLogin()"></app-footer>

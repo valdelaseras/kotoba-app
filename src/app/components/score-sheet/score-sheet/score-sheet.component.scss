@@ -1,19 +1,19 @@
-.single-entry-list > li {
+h3 {
+  margin-bottom: 1.5rem;
+}
+
+.single-entry-item {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.entries {
+  margin-right: 1rem;
   display: inline-block;
 }
 
-.single-entry-list > li:first-child {
-  color: var(--quaternary-color);
-  margin-right: 2rem;
-  width: 100px;
-}
-
-.answer-entry {
-  margin-right: 1rem;
-}
-
-li > span:first-child {
-  margin-right: 1rem;
+.incorrect-entry {
+  color: var(--invalid-color);
 }
 
 .stats > li h4 {
@@ -28,7 +28,3 @@ li > span:first-child {
   margin-bottom: 0;
 }
 
-.incorrect-answer {
-  text-decoration: underline;
-  color: var(--invalid-color);
-}

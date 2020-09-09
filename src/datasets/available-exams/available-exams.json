@@ -3,7 +3,7 @@
     "id": 0,
     "category": "kana",
     "title": "Hiragana",
-    "description": "Test your knowledge of hiragana. If you are a beginner in learning to read and write Japanese, this is a good place to start!",
+    "description": "Test your knowledge of hiragana. If you are a beginner in learning to read and write Japanese, this is a good place to start",
     "dataSets": [
       "hiragana"
     ],
@@ -16,7 +16,7 @@
     "id": 1,
     "category": "kana",
     "title": "Katakana",
-    "description": "Test your katakana knowledge.",
+    "description": "Test your katakana knowledge",
     "dataSets": [
       "katakana"
     ],
@@ -29,7 +29,7 @@
     "id": 2,
     "category": "kana",
     "title": "All kana",
-    "description": "If you feel you have sufficient knowledge of both hiragana and katakana, this is the perfect exam to test your fluency.",
+    "description": "Test your kana knowledge by mixing katakana and hiragana",
     "dataSets": [
       "hiragana",
       "katakana"

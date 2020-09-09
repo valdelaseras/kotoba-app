@@ -1,7 +1,7 @@
 <div id="scoresheet">
   <div class="column">
     <div class="content">
-      <h1>Exam overview</h1>
+      <h1>Score</h1>
     </div>
   </div>
   <div class="column">
@@ -9,20 +9,26 @@
       <div class="content">
           <fieldset *ngIf="exam">
             <legend>
-              <h2>Your answers</h2>
+              <h2>Overview</h2>
             </legend>
-            <ul class="single-entry-list" *ngFor="let entry of exam.getQuestions()">
-              <li>
-                <span>Q:</span> {{ entry.question }}
-              </li>
-              <li>
-                <!--TODO: correct answers in green or something-->
-                <span>A:</span>
-                <span class="answer-entry"
-                      [ngClass]="{'incorrect-answer': !answer.valid }"
+            <div class="column">
+              <div class="column column-mobile three">
+                <h3>Question</h3>
+              </div>
+              <div class="column column-mobile three b">
+                <h3>Answers</h3>
+              </div>
+            </div>
+            <div class="column single-entry-item" *ngFor="let entry of exam.getQuestions()">
+              <div class="column column-mobile three">
+                <span class="highlight">{{ entry.question }}</span>
+              </div>
+              <div class="column column-mobile three b">
+                <span class="entries"
+                      [ngClass]="{'incorrect-entry': !answer.valid }"
                       *ngFor="let answer of entry.givenAnswers">{{ answer.entry }}</span>
-              </li>
-            </ul>
+              </div>
+            </div>
           </fieldset>
       </div>
     </div>
