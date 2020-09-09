@@ -1,15 +1,6 @@
 /*@start section*/
 .section {
-  // height of navigation(s)
-  margin: 70px 0;
-  min-height: calc(100vh - 140px);
-}
-
-@media only screen and (min-width: 1024px) {
-  .section {
-    margin: 140px 0;
-    min-height: calc( 100vh - 280px );
-  }
+  height: 100vh;
 }
 /*@end section*/
 
@@ -17,11 +8,17 @@
 
 /*@start section-content*/
 .section-content {
+    padding: 90px 0;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     position: relative;
-    padding: 1rem 0;
     height: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .section-content {
+    padding: 140px 0;
+  }
 }
 /*@end section-content*/
 
