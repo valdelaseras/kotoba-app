@@ -12,6 +12,5 @@ export interface ISettings {
     theme: string,
     font: string,
     fontSize: string,
-    fontSerif: boolean
   };
 }

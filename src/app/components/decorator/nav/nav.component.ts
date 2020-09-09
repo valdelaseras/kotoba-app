@@ -20,4 +20,10 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  onSwipeRight(): void {
+    if ( this.menuIsOpen === true ) {
+      this.menuIsOpen = false;
+    }
+  }
 }

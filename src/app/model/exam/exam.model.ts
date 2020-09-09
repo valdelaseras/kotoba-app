@@ -106,16 +106,34 @@ export class Exam {
     switch ( this.settings.method ) {
       case 'Katakana to romaji':
       case 'Hiragana to romaji':
-        return Object.assign( question, { question: dataEntry.kana, answer: dataEntry.romaji, placeholder: 'Romaji' } );
+        return Object.assign( question, {
+          question: dataEntry[ dataEntry.dataSet ],
+          answer: dataEntry.romaji,
+          placeholder: 'Romaji',
+          dataSet: dataEntry.dataSet,
+        } );
       case 'Romaji to katakana':
       case 'Romaji to hiragana':
-        return Object.assign( question, { question: dataEntry.romaji, answer: dataEntry.kana, placeholder: 'Hiragana' } );
+        return Object.assign( question, {
+          question: dataEntry.romaji,
+          answer: dataEntry[ dataEntry.dataSet ],
+          placeholder: dataEntry.dataSet,
+          dataSet: dataEntry.dataSet,
+        } );
       case 'Shuffle':
         const random = Math.random();
         return Object.assign( question, {
-          question: random > .5 ? dataEntry.romaji : dataEntry.kana,
-          answer: random > .5 ? dataEntry.kana : dataEntry.romaji,
-          placeholder: random > .5 ? 'Hiragana' : 'Romaji'
+          question: random > .5 ? dataEntry.romaji : dataEntry[ dataEntry.dataSet ],
+          answer: random > .5 ? dataEntry[ dataEntry.dataSet ] : dataEntry.romaji,
+          placeholder: random > .5 ? dataEntry.dataSet : 'Romaji',
+          dataSet: dataEntry.dataSet
+        } );
+      case 'Romaji to kanji':
+        return Object.assign( question, {
+          question: dataEntry.romaji,
+          answer: dataEntry.kanji,
+          placeholder: 'Kanji',
+          dataSet: dataEntry.dataSet,
         } );
     }
   }

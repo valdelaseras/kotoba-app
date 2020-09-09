@@ -20,7 +20,7 @@
                      autocomplete="off"
                      onInput="this.value = this.value.toLowerCase()"
                      [(ngModel)]="givenAnswer.entry"
-                     [placeholder]="currentQuestion.placeholder"/>
+                     [placeholder]="currentQuestion.placeholder | titlecase"/>
               <div class="column info-bar">
                 <div class="column two">
                   <small>{{ attempt }} / {{ allowedRetries || '∞'}}</small>

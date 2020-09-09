@@ -1,14 +1,17 @@
-<app-nav [hidden]="onLogin()"></app-nav>
-<main>
+<div [ngClass]="[settings.visualSettings.font, settings.visualSettings.fontSize, settings.visualSettings.theme]" class="theme-settings">
+  <app-nav [hidden]="onLogin()"></app-nav>
   <app-secondary-nav [hidden]="onLogin()"></app-secondary-nav>
-  <section tabindex="0" class="section">
-    <div class="section-content">
-      <div class="grid">
-        <div class="column">
-          <router-outlet (activate)="onActivate()"></router-outlet>
+  <main>
+    <section tabindex="0" class="section">
+      <div class="section-content">
+        <div class="grid">
+          <div class="column">
+            <router-outlet (activate)="onActivate()"></router-outlet>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
-<app-footer [hidden]="onLogin()"></app-footer>
+    </section>
+  </main>
+  <app-footer [hidden]="onLogin()"></app-footer>
+</div>
+
