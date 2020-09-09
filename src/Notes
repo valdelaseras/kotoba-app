@@ -12,12 +12,19 @@ TODO: look into ngtemplate / ngcontainer / ngcontent
 
 TODO: routing and routing guards don't work as intended yet I think. When I go to /lobby on phone, I get 'blabla not found'
 
+TODO: ff-primary, fs-size styling fixes ( anything with rem etc. ), dark and light theme, sans-serif true.
+      Obviously replace current fonts with some permanent fonts. Also, I'd like to change the option displayed titles differently from the options as defined in the settings service
+
+TODO: app-footer has a height of 20px for some reason
+
+TODO: change position of submit btn on settings page
+TODO: Custom checkbox styling
+TODO: Third theme with color picker for dark and light with own prefered color for quaternary?
 
 build PWA:
 _____________
 ng build --prod
 http-server -p 8080 -c-1 dist/kotoba-app
-TODO: what does -c-1 mean?
 
 serve and allow access via ip:
 _____________

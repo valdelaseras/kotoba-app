@@ -31,10 +31,9 @@ export class SettingsService {
         },
 
         visualSettings: {
-          theme: 'Dark theme',
-          font: 'Default',
-          fontSize: 'Default',
-          fontSerif: false
+          theme: 'dark-theme',
+          font: 'helvetica',
+          fontSize: 'normal'
         }
       };
       this.updateSettings( this.settings );
@@ -59,10 +58,9 @@ export class SettingsService {
 
   getVisualOptions(): IVisualOptions {
     return {
-      theme: ['Dark theme', 'Light theme'],
-      font: ['Default', 'Arial', 'Helvetica'],
-      fontSize: ['Default', 'L', 'XL', 'XXL'],
-      fontSerif: [ true, false ]
+      theme: ['dark-theme', 'light-theme'],
+      font: ['helvetica', 'grandstander', 'longcang'],
+      fontSize: ['normal', 'large', 'xl']
     };
   }
 

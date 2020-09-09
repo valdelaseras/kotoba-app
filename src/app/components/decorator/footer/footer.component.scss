@@ -2,5 +2,7 @@
   background-color: var(--tertiary-color);
   display: inline-block;
   width: 100%;
+  //TODO: this is a temporary fix. for some unknown reason app-footer has a height of 17px
+  margin-bottom: -20px;
 }
 

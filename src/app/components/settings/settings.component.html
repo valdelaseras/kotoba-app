@@ -67,12 +67,13 @@
                         title="{{ themeOption }}"
                         *ngFor="let themeOption of visualOptions.theme"
                         [defaultSelected]="currentSettings.visualSettings.theme === themeOption">
-                  {{ themeOption }}
+                  {{ themeOption | titlecase }}
                 </option>
               </select>
             </div>
 
             <h3>Text preference</h3>
+            <p>For kids who can't read good and want to learn how to do other stuff good too</p>
             <div class="form-group">
               <label for="font-preference">Font family</label>
               <select [(ngModel)]="currentSettings.visualSettings.font"
@@ -82,7 +83,7 @@
                         title="{{ fontOption }}"
                         *ngFor="let fontOption of visualOptions.font"
                         [defaultSelected]="currentSettings.visualSettings.font === fontOption">
-                  {{ fontOption }}
+                  {{ fontOption | titlecase }}
                 </option>
               </select>
             </div>
@@ -96,17 +97,9 @@
                         title="{{ fontSizeOption }}"
                         *ngFor="let fontSizeOption of visualOptions.fontSize"
                         [defaultSelected]="currentSettings.visualSettings.fontSize === fontSizeOption">
-                  {{ fontSizeOption }}
+                  {{ fontSizeOption | titlecase }}
                 </option>
               </select>
-            </div>
-
-            <div class="form-group">
-              <input type="checkbox"
-                     title="Font serif"
-                     id="font-serif"
-                     name="font-serif" [(ngModel)]="currentSettings.visualSettings.fontSerif">
-              <label for="font-serif">Check to enable Serif font</label>
             </div>
           </fieldset>
         </div>
@@ -127,6 +120,13 @@
                 <label for="history-record">Keep a local record of your scores</label>
               </div>
             </fieldset>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="column two">
+          <div class="content">
+            <button type="submit" class="btn btn-primary btn-main">Save</button>
           </div>
         </div>
       </div>
