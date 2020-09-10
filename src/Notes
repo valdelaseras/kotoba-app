@@ -20,6 +20,7 @@ TODO: app-footer has a height of 20px for some reason
 TODO: change position of submit btn on settings page
 TODO: Custom checkbox styling
 TODO: Third theme with color picker for dark and light with own prefered color for quaternary?
+      or maybe do tokyo metro lines color based themes 
 
 TODO: also change manifest color based on theme?
 TODO: login pages messed up due to theme. instead of doing multiple hacks to ""fix"" it,
@@ -27,7 +28,8 @@ TODO: login pages messed up due to theme. instead of doing multiple hacks to ""f
       index.html?). Height is fixed now but, not sure if its due to cache, but when tabbing
       username input on phone, background is suddenly white.
 
-TODO: on pressing submit btn of settings, need some kind of feedback
+TODO: on pressing submit btn of settings, need some kind of feedback. also more visual cues
+      during exam input / after wrong answer was given
 
 build PWA:
 _____________
