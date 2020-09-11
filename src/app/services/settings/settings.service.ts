@@ -59,7 +59,7 @@ export class SettingsService {
   getVisualOptions(): IVisualOptions {
     return {
       theme: ['dark-theme', 'light-theme'],
-      font: ['helvetica', 'grandstander', 'longcang'],
+      font: ['helvetica', 'montserrat', 'comfortaa'],
       fontSize: ['normal', 'large', 'xl']
     };
   }

@@ -34,9 +34,8 @@
             <div class="form-group">
               <label for="repeat-select">Repeat incorrectly answered questions</label>
               <p>
-                By default, questions you answered incorrectly will be repeated again at a later,
-                random moment in your exam until you answer them correctly.
-                You may also choose to disable this.
+                By default, questions you answered incorrectly will be repeated again at the end of your exam
+                until you answer them correctly. You may also choose to disable this.
                 <!--and add some other options later maybe-->
               </p>
               <select [(ngModel)]="currentSettings.examSettings.repeat " name="repeat" id="repeat-select">
@@ -126,7 +125,7 @@
       <div class="column">
         <div class="column two">
           <div class="content">
-            <button type="submit" class="btn btn-primary btn-main">Save</button>
+            <button type="submit" class="btn btn-primary btn-main submit-confirmation">Save</button>
           </div>
         </div>
       </div>

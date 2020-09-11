@@ -5,6 +5,7 @@
     --secondary-color-alpha: rgba(244, 244, 244, .1);
     --tertiary-color: #000;
     --quaternary-color: #FFB6C1;
+    --quaternary-color-active: #d69aa3;
 
     --invalid-color: #bd1616;
 
@@ -12,12 +13,14 @@
     --disabled-bg-color: #333;
     --disabled-txt-color: grey;
   }
+
   &.light-theme {
     --primary-color: #f4f4f4;
     --secondary-color: #222;
     --secondary-color-alpha: rgba(34, 34, 34, .1);
     --tertiary-color: #fff;
     --quaternary-color: #3ca658;
+    --quaternary-color-active: #2e8043;
 
     --invalid-color: #bd1616;
 
@@ -27,3 +30,4 @@
   }
 }
 
+//TODO: invert-on-dark-theme class

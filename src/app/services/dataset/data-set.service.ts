@@ -38,5 +38,6 @@ export class DataSetService {
 enum DATA_SET_NAME {
   HIRAGANA = 'hiragana',
   KATAKANA = 'katakana',
+  // KANA = 'kana',
   KANJIN5 = 'kanjiN5'
 }

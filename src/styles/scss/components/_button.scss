@@ -122,3 +122,8 @@ button {
   color: var(--primary-color);
 }
 
+.btn.btn-primary.btn-main:hover,
+.btn.btn-primary.btn-main:focus,
+.btn.btn-primary.btn-main:focus-within {
+  background-color: var(--quaternary-color-active);
+}

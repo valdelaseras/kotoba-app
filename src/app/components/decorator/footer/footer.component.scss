@@ -6,3 +6,28 @@
   margin-bottom: -20px;
 }
 
+a.active {
+  color: var(--quaternary-color);
+  font-weight: bold;
+}
+
+.icon-list {
+  display: inline-block;
+}
+
+.icon-link > img {
+  width: 40px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .icon-list > li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  .icon-list > li:last-child {
+    margin-right: 0;
+  }
+}
+
+
