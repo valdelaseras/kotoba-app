@@ -1,14 +1,62 @@
 [
   {
-    "kanji": "水",
+    "kanji": "安",
     "romaji": {
-      "kun": ["mizu", "mizuu"],
-      "on": ["sui"]
+      "kun": ["yasu"],
+      "on": ["an"]
     },
     "kana": {
-        "kun": ["みず", "みず-"],
-        "on": ["スイ"]
+      "kun": ["やす"],
+      "on": ["アン"]
     },
-    "english": ["water"]
+    "english": ["cheap", "peaceful"]
+  },
+  {
+    "kanji": "一",
+    "romaji": {
+      "kun": ["hito", "hito(tsu)"],
+      "on": ["ichi", "itsu"]
+    },
+    "kana": {
+      "kun": ["ひと", "ひと(つ)"],
+      "on": ["イチ", "イツ"]
+    },
+    "english": ["one"]
+  },
+  {
+    "kanji": "飲",
+    "romaji": {
+      "kun": ["no", "no(mu)"],
+      "on": ["in"]
+    },
+    "kana": {
+      "kun": ["の", "のむ"],
+      "on": ["イン"]
+    },
+    "english": ["drink"]
+  },
+  {
+    "kanji": "右",
+    "romaji": {
+      "kun": ["migi"],
+      "on": ["u", "yuu"]
+    },
+    "kana": {
+        "kun": ["みぎ"],
+        "on": ["ウ", "ユウ"]
+    },
+    "english": ["right"]
+  },
+  {
+    "kanji": "雨",
+    "romaji": {
+      "kun": ["ame"],
+      "on": ["u"]
+    },
+    "kana": {
+      "kun": ["あめ"],
+      "on": ["ウ"]
+    },
+    "english": ["rain"]
   }
 ]

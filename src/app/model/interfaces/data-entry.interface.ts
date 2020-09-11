@@ -4,7 +4,7 @@ export interface IDataEntry{
   romaji: string;
   translation?: string[];
   kanji?: string;
-  onyomi?: string[];
-  kunyomi?: string[];
+  on?: string[];
+  kun?: string[];
   dataSet?: string;
 }

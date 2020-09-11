@@ -23,10 +23,8 @@ export class ExamService {
 
     for ( const dataSetName of selectedExam.dataSets ) {
       dataSet.push( ...this.datasetService.getDataSet( dataSetName ) );
-      console.log(dataSetName);
     }
 
-    console.log(dataSet);
     this.currentExam = new Exam( dataSet, settings, selectedExam.title );
   }
 

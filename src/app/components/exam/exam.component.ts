@@ -34,7 +34,6 @@ export class ExamComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentQuestion = this.exam.getQuestion();
-    console.log(this.currentQuestion);
   }
 
   onResize(): void {

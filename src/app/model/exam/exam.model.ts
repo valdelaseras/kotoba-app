@@ -138,7 +138,6 @@ export class Exam {
           dataSet: dataEntry.dataSet,
         });
     }
-    console.log(this.settings.method);
   }
 
   private shuffleOrder( questionnaire: IExamQuestion[] ): void  {

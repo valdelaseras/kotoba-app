@@ -34,6 +34,11 @@ TODO: convert Kanji N5 to N1 dataset to JSON, use Elasticsearch.
       - https://www.yosida.com/en/kanji.php?level=5&page=1 JLPT levels sorted kanji. In sources there are js files that contain all info for N5 kanji
       - Add a complete dictionary ( use Elastic ). Let users add words from dictionary to custom exams
 
+
+TODO: Switching between keyboards really sucks. Esp. if doing something like all kana - shuffled. Perhaps,
+      if possible, automatically switch keyboard based on the expected input?
+
+
 build PWA:
 _____________
 ng build --prod
