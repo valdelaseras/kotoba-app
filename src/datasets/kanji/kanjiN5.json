@@ -1,6 +1,6 @@
 [
   {
-    "kanji": "安",
+    "kanji": ["安"],
     "romaji": {
       "kun": ["yasu"],
       "on": ["an"]
@@ -12,7 +12,7 @@
     "english": ["cheap", "peaceful"]
   },
   {
-    "kanji": "一",
+    "kanji": ["一", "一つ"],
     "romaji": {
       "kun": ["hito", "hito(tsu)"],
       "on": ["ichi", "itsu"]
@@ -24,7 +24,7 @@
     "english": ["one"]
   },
   {
-    "kanji": "飲",
+    "kanji": ["飲", "飲む"],
     "romaji": {
       "kun": ["no", "no(mu)"],
       "on": ["in"]

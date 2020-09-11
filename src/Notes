@@ -11,6 +11,7 @@ TODO: look into ngtemplate / ngcontainer / ngcontent
 TODO: routing and routing guards don't work as intended yet I think. When I go to /lobby on phone, I get 'blabla not found'
 
 TODO: Styling related
+      - auto theme dark light
       - Handle theme setting elegantly and in root of project preferably, not in app-component
       - Set theme color based on selected theme in manifest
       Remaining issues, tested on phone:
@@ -38,6 +39,14 @@ TODO: convert Kanji N5 to N1 dataset to JSON, use Elasticsearch.
 TODO: Switching between keyboards really sucks. Esp. if doing something like all kana - shuffled. Perhaps,
       if possible, automatically switch keyboard based on the expected input?
 
+TODO: Add page with explanation on 'rules' of exam validation & link to it from secondary nav / exam component / lobby
+      - Just create FAQ. Scoresheet explained, num of correct answers > total num of questions, weight of retries, how score is calculated
+      - in FAQ, explain how to pass multiple answers ( spaces ignored, separator is , ),
+      - in FAQ, explain capitalisation
+      - downloading JSON lists, importing JSON lists etc. once that is done
+      - also in FAQ something about 'personal data'
+
+TODO: users must be able to download their custom lists (as json files but maybe with .kotoba extension) and be able to import them again into kotoba ( or share with other people )
 
 build PWA:
 _____________
