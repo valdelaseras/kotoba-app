@@ -149,9 +149,9 @@ export class Exam {
         });
       case 'Romaji to katakana':
         return Object.assign(question, {
-          question: dataEntry.romaji.kun.join(', '),
+          question: dataEntry.romaji.on.join(', '),
           answers: dataEntry.kana.on,
-          placeholder: 'Hiragana',
+          placeholder: 'Katakana',
           dataSet: dataEntry.dataSet,
         });
         // TODO: add mixed katakana
