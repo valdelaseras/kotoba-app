@@ -48,6 +48,10 @@ TODO: Add page with explanation on 'rules' of exam validation & link to it from 
 
 TODO: users must be able to download their custom lists (as json files but maybe with .kotoba extension) and be able to import them again into kotoba ( or share with other people )
 
+TODO: DATASETS !!!
+      - hiragana ji, zi are the same but in exam there is no difference so a 'correct' answer might be considered 'wrong'. Need to add a hint in such cases
+      ぢ and じ、ず and　づ
+
 build PWA:
 _____________
 ng build --prod

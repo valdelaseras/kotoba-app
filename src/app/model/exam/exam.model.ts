@@ -124,6 +124,7 @@ export class Exam {
     };
 
     switch ( this.settings.method ) {
+      // Hiragana exams
       case 'Hiragana to romaji':
         return Object.assign(question, {
           question: dataEntry[dataEntry.dataSet],
@@ -138,6 +139,22 @@ export class Exam {
           placeholder: 'Hiragana',
           dataSet: dataEntry.dataSet,
         });
+        // TODO: add mixed hiragana
+      case 'Katakana to romaji':
+        return Object.assign(question, {
+          question: dataEntry[dataEntry.dataSet],
+          answers: dataEntry.romaji.on,
+          placeholder: 'Romaji',
+          dataSet: dataEntry.dataSet,
+        });
+      case 'Romaji to katakana':
+        return Object.assign(question, {
+          question: dataEntry.romaji.kun.join(', '),
+          answers: dataEntry.kana.on,
+          placeholder: 'Hiragana',
+          dataSet: dataEntry.dataSet,
+        });
+        // TODO: add mixed katakana
       case 'Romaji to kanji':
         return Object.assign(question, {
           question: dataEntry.romaji.kun.join( ', ' ),
