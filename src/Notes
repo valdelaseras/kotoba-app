@@ -1,33 +1,70 @@
 TODO: ARIA, css browser prefixes
-TODO: build some collapsible component with input checkbox that works in nav mobile and also for the settings page ( collapse the 3 setting content by default )
-TODO: clear(er) difference between typography elements
-TODO: all components must of course be reusable with dynamic content etc. ( so you could reuse the login component anywhere, with different label titles, username/email, password etc. )
-TODO: seems to be a standard thing to remove the 'app-' prefixes from angular components as long as the tags don't clash with anything already existing? Double check
+TODO: When refactoring, create beautiful reusable components :)
+TODO: Add documentation after refactoring
+TODO: Seems to be a standard thing to remove the 'app-' prefixes from angular components as long as the tags don't clash with anything already existing? Double check
 
-TODO: complete katana dataset, not sure what I am missing but I am missing something.
-TODO: find kanji datasets somewhere? Consider using https://wanakana.com/?
+TODO: Complete katana dataset, not sure what I am missing but I am missing something.
+TODO: Find kanji datasets somewhere
 
-TODO: Replace 'default' values in selects to whatever values they actually are
 TODO: look into ngtemplate / ngcontainer / ngcontent
 
 TODO: routing and routing guards don't work as intended yet I think. When I go to /lobby on phone, I get 'blabla not found'
 
-TODO: ff-primary, fs-size styling fixes ( anything with rem etc. ), dark and light theme, sans-serif true.
-      Obviously replace current fonts with some permanent fonts. Also, I'd like to change the option displayed titles differently from the options as defined in the settings service
+TODO: Styling related
+      - auto theme dark light
+      - Handle theme setting elegantly and in root of project preferably, not in app-component
+      - Set theme color based on selected theme in manifest
+      Remaining issues, tested on phone:
+      - when tabbing username input on phone, background is suddenly white.
+      - white line bottom of landing
 
-TODO: app-footer has a height of 20px for some reason
+      TODO: Change position of submit btn on settings page
+      TODO: Custom checkbox styling
+      TODO: Third theme with color picker for dark and light with own preferred color for quaternary? Or maybe do tokyo metro lines color based themes
+      TODO: On pressing submit btn of settings, need some kind of feedback. Also more visual cues during exam input / after wrong answer was given
+      TODO: create nice logo for weird in square icon
+      TODO: ff-primary, fs-size styling fixes ( anything with rem etc. ), dark and light theme.
+            Obviously replace current fonts with some permanent fonts.
+      TODO: I'd like to change the option displayed titles differently from the options as defined in the settings service
 
-TODO: change position of submit btn on settings page
-TODO: Custom checkbox styling
-TODO: Third theme with color picker for dark and light with own prefered color for quaternary?
+TODO: 'All kana' exams don't work
 
-TODO: also change manifest color based on theme?
-TODO: login pages messed up due to theme. instead of doing multiple hacks to ""fix"" it,
-      see if I can change the theme settings to another element instead ( preferably in
-      index.html?). Height is fixed now but, not sure if its due to cache, but when tabbing
-      username input on phone, background is suddenly white.
+TODO: convert Kanji N5 to N1 dataset to JSON, use Elasticsearch.
+      - JMdict (XML) is an entire dictionary. I could just build in a dictionary as well later on but this isn't really what I need
+      - Need specific kanji json datasets for each level
+      - https://www.yosida.com/en/kanji.php?level=5&page=1 JLPT levels sorted kanji. In sources there are js files that contain all info for N5 kanji
+      - Add a complete dictionary ( use Elastic ). Let users add words from dictionary to custom exams
 
-TODO: on pressing submit btn of settings, need some kind of feedback
+
+TODO: Switching between keyboards really sucks. Esp. if doing something like all kana - shuffled. Perhaps,
+      if possible, automatically switch keyboard based on the expected input?
+
+TODO: Add page with explanation on 'rules' of exam validation & link to it from secondary nav / exam component / lobby
+      - Just create FAQ. Scoresheet explained, num of correct answers > total num of questions, weight of retries, how score is calculated
+      - in FAQ, explain how to pass multiple answers ( spaces ignored, separator is , ),
+      - in FAQ, explain capitalisation
+      - downloading JSON lists, importing JSON lists etc. once that is done
+      - also in FAQ something about 'personal data'
+
+TODO: users must be able to download their custom lists (as json files but maybe with .kotoba extension) and be able to import them again into kotoba ( or share with other people )
+
+TODO: DATASETS !!!
+      - hiragana ji, zi are the same but in exam there is no difference so a 'correct' answer might be considered 'wrong'. Need to add a hint in such cases
+      ぢ and じ、ず and　づ also in katakana
+      - option to practice on and kun specifically in kanji lists?
+      - only give (english) hints when romaji - kanji.
+      - create vocabulary lists of combined kanji
+      - japanese comma should be accepted as , to separate multiple answers
+
+      - shita, shimo, moto, kudaru, orosu, sageru in the fieldset is. a lot. maybe fix a little
+      - also need word break limits
+      - ...maybe better to just show 1 kanji or 2 at most? The first two? or something
+
+      - when doing kanji to english some translations aren't evaluated well. 'ten thousand' and 'go out'. Looks like it's the space maybe?
+      - should put a skip function in that never returns the question and counts as incorrect
+
+      - KN5: Eki doesn't have a kun reading (technically). Displaying jsut 'station' kind of works but in the scoresheet, you only see the kanji there on the Q side, instead of A side.
+      - both kun and on entries should be counted as correct OR on / kun must be indicated on the question
 
 build PWA:
 _____________

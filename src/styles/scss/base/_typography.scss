@@ -1,12 +1,13 @@
 html {
-    font-size: 16px;
+    //font-size: 16px;
     line-height: 2;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
-//TODO: Pick actual fonts
 .helvetica { font-family: Helvetica, sans-serif; }
-.grandstander { font-family: 'Grandstander', cursive; }
-.longcang { font-family: 'Long Cang', cursive; }
+.comfortaa { font-family: 'Comfortaa', cursive; }
+.montserrat { font-family: 'Montserrat', sans-serif; }
 
 //TODO: Pick actual sizes and adjust some styling based on rem
 .normal { font-size: 16px; }
@@ -14,9 +15,9 @@ html {
 .xl { font-size: 24px; }
 
 @media only screen and ( min-width: $large-screen ) {
-  .fs-normal { font-size: 17px; }
-  .fs-large { font-size: 21px; }
-  .fs-xl { font-size: 25px; }
+  .normal { font-size: 17px; }
+  .large { font-size: 21px; }
+  .xl { font-size: 25px; }
 }
 
 p {

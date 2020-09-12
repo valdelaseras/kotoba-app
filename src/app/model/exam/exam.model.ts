@@ -35,18 +35,31 @@ export class Exam {
     return this.currentQuestionIndex + 1;
   }
 
+  // @TODO
+  // store these integers in exam entry on question increment
+  // that way angular wont have to recalculate the score every n milliseconds
   numberOfCorrectAnswers(): number {
-    return this.questionnaire.reduce( ( previousValue: number, examEntry: IExamQuestion ) =>
-      previousValue += examEntry.givenAnswers.filter( ( givenAnswer: IExamGivenAnswer ) => givenAnswer.valid )
-        .length, 0
-    );
+    let correct = 0;
+
+    this.questionnaire.forEach( ( examEntry: IExamQuestion ) => {
+      examEntry.givenAnswers.forEach( ( givenAnswer: IExamGivenAnswer ) => {
+        correct += givenAnswer.valid.filter( ( valid: boolean ) => valid ).length;
+      } );
+    } );
+
+    return correct;
   }
 
   numberOfIncorrectAnswers(): number {
-    return this.questionnaire.reduce( ( previousValue: number, examEntry: IExamQuestion ) =>
-      previousValue += examEntry.givenAnswers.filter( ( givenAnswer: IExamGivenAnswer ) => !givenAnswer.valid )
-        .length, 0
-    );
+    let numIncorrect = 0;
+
+    this.questionnaire.forEach( ( examEntry: IExamQuestion ) => {
+      examEntry.givenAnswers.forEach( ( givenAnswer: IExamGivenAnswer ) => {
+        numIncorrect += givenAnswer.valid.filter( ( valid: boolean ) => !valid ).length;
+      } );
+    } );
+
+    return numIncorrect;
   }
 
   getQuestions( validOnly?: boolean ): IExamQuestion[] {
@@ -83,8 +96,15 @@ export class Exam {
     return this.questionnaire[ this.currentQuestionIndex ];
   }
 
-  answerIsCorrect( answer: string ): boolean {
-    return this.questionnaire[ this.currentQuestionIndex ].answer === answer.toLowerCase();
+  answerIsCorrect( answer: string ): boolean[] {
+    const givenAnswers = answer.toLowerCase().replace(/ /g, '' ).split(',');
+
+    if ( givenAnswers.length > this.questionnaire[ this.currentQuestionIndex ].answers.length ) {
+      return [false];
+    }
+
+    return givenAnswers
+      .map( ( givenAnswer: string ) => this.questionnaire[ this.currentQuestionIndex ].answers.includes( givenAnswer ) );
   }
 
   appendQuestion( question: IExamQuestion ): void {
@@ -104,37 +124,70 @@ export class Exam {
     };
 
     switch ( this.settings.method ) {
-      case 'Katakana to romaji':
+      // Hiragana exams
       case 'Hiragana to romaji':
-        return Object.assign( question, {
-          question: dataEntry[ dataEntry.dataSet ],
-          answer: dataEntry.romaji,
+        return Object.assign(question, {
+          question: dataEntry[dataEntry.dataSet],
+          answers: dataEntry.romaji.kun,
           placeholder: 'Romaji',
           dataSet: dataEntry.dataSet,
-        } );
-      case 'Romaji to katakana':
+        });
       case 'Romaji to hiragana':
-        return Object.assign( question, {
-          question: dataEntry.romaji,
-          answer: dataEntry[ dataEntry.dataSet ],
-          placeholder: dataEntry.dataSet,
+        return Object.assign(question, {
+          question: dataEntry.romaji.kun.join(', '),
+          answers: dataEntry.kana.kun,
+          placeholder: 'Hiragana',
           dataSet: dataEntry.dataSet,
-        } );
-      case 'Shuffle':
-        const random = Math.random();
-        return Object.assign( question, {
-          question: random > .5 ? dataEntry.romaji : dataEntry[ dataEntry.dataSet ],
-          answer: random > .5 ? dataEntry[ dataEntry.dataSet ] : dataEntry.romaji,
-          placeholder: random > .5 ? dataEntry.dataSet : 'Romaji',
-          dataSet: dataEntry.dataSet
-        } );
+        });
+        // TODO: add mixed hiragana
+      case 'Katakana to romaji':
+        return Object.assign(question, {
+          question: dataEntry[dataEntry.dataSet],
+          answers: dataEntry.romaji.on,
+          placeholder: 'Romaji',
+          dataSet: dataEntry.dataSet,
+        });
+      case 'Romaji to katakana':
+        return Object.assign(question, {
+          question: dataEntry.romaji.on.join(', '),
+          answers: dataEntry.kana.on,
+          placeholder: 'Katakana',
+          dataSet: dataEntry.dataSet,
+        });
+        // TODO: add mixed katakana
       case 'Romaji to kanji':
-        return Object.assign( question, {
-          question: dataEntry.romaji,
-          answer: dataEntry.kanji,
+        return Object.assign(question, {
+          question: dataEntry.romaji.kun.join( ', ' ),
+          answers: dataEntry.kanji,
           placeholder: 'Kanji',
           dataSet: dataEntry.dataSet,
-        } );
+          hint: dataEntry.english.join( ', ' )
+        });
+        // TODO: now only tested on kunyomi which is probably undesirable
+      case 'Kanji to romaji':
+        return Object.assign(question, {
+          question: dataEntry.kanji.join( ', ' ),
+          answers: dataEntry.romaji.kun,
+          placeholder: 'Kunyomi',
+          dataSet: dataEntry.dataSet,
+          hint: dataEntry.english.join( ', ' )
+        });
+      case 'Kanji to English':
+        return Object.assign(question, {
+          question: dataEntry.kanji[0],
+          answers: dataEntry.english,
+          placeholder: 'Translation',
+          dataSet: dataEntry.dataSet
+        });
+      case 'English to kanji':
+        return Object.assign(question, {
+          question: dataEntry.english.join( ', ' ),
+          answers: dataEntry.kanji,
+          placeholder: 'Kanji',
+          dataSet: dataEntry.dataSet
+        });
+        // TODO: add shuffle all
+        // TODO: add shuffle kanji & romaji
     }
   }
 

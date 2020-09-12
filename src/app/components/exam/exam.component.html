@@ -12,6 +12,7 @@
             <fieldset>
               <legend>
                 <label for="question">{{ currentQuestion.question }}</label>
+                <span *ngIf="currentQuestion.hint">{{ currentQuestion.hint }}</span>
               </legend>
               <input id="question"
                      required
@@ -26,8 +27,15 @@
                   <small>{{ attempt }} / {{ allowedRetries || '∞'}}</small>
                 </div>
                 <div class="column two">
-                  <div class="incorrect-answer" *ngIf="givenAnswer.valid === false">
-                    <small class="invalid-color">This answer is incorrect</small>
+                  <div class="incorrect-answer" *ngIf="hasIncorrectAnswers()">
+                    <small class="invalid-color">
+                      <ng-container *ngIf="!multipleAnswersGiven() && numberOfIncorrectAnswers() > 0">
+                        This answer is incorrect
+                      </ng-container>
+                      <ng-container *ngIf="multipleAnswersGiven() && numberOfIncorrectAnswers() > 0">
+                        One or more answers are incorrect
+                      </ng-container>
+                    </small>
                   </div>
                 </div>
               </div>

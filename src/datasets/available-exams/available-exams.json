@@ -3,7 +3,7 @@
     "id": 0,
     "category": "kana",
     "title": "Hiragana",
-    "description": "Test your knowledge of hiragana. If you are a beginner in learning to read and write Japanese, this is a good place to start",
+    "description": "Test your hiragana knowledge",
     "dataSets": [
       "hiragana"
     ],

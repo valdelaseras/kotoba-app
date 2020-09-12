@@ -1,10 +1,9 @@
+import { IReadings } from './readings.interface';
+
 export interface IDataEntry{
-  hiragana?: string;
-  katakana?: string;
-  romaji: string;
-  translation?: string[];
-  kanji?: string;
-  onyomi?: string[];
-  kunyomi?: string[];
+  kanji?: string[];
+  romaji: IReadings;
+  kana: IReadings;
+  english?: string[];
   dataSet?: string;
 }

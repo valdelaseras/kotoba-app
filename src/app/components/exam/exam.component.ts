@@ -19,7 +19,7 @@ export class ExamComponent implements OnInit {
   currentQuestion: IExamQuestion;
   givenAnswer: IExamGivenAnswer = {
     entry: undefined,
-    valid: undefined
+    valid: []
   };
   currentSettings: IExamSettings;
   allowedRetries: number;
@@ -40,14 +40,26 @@ export class ExamComponent implements OnInit {
     window.scroll(0, 0 );
   }
 
+  hasIncorrectAnswers(): boolean {
+    return this.numberOfIncorrectAnswers() > 0;
+  }
+
+  multipleAnswersGiven(): boolean {
+    return this.givenAnswer.entry.includes(', ');
+  }
+
+  numberOfIncorrectAnswers(): number {
+    return this.givenAnswer.valid.filter( ( valid: boolean ) => !valid ).length;
+  }
+
   submitForm(): void {
     this.givenAnswer.valid = this.exam.answerIsCorrect( this.givenAnswer.entry );
     this.saveGivenAnswerEntry();
 
-    if ( this.givenAnswer.valid ) {
+    if ( !this.hasIncorrectAnswers() ) {
       this.resetGivenAnswer();
       this.updateQuestion();
-    } else if ( !this.givenAnswer.valid ) {
+    } else if ( this.hasIncorrectAnswers() ) {
       this.attempt += 1;
       if ( this.attempt === this.allowedRetries ) {
         this.resolveQuestionRepeat();
@@ -59,7 +71,7 @@ export class ExamComponent implements OnInit {
   resetGivenAnswer(): void {
     this.givenAnswer = {
       entry: undefined,
-      valid: undefined
+      valid: []
     };
   }
 
