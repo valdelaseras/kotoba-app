@@ -172,6 +172,38 @@ export class Exam {
           dataSet: dataEntry.dataSet,
           hint: dataEntry.english.join( ', ' )
         });
+      case 'Kanji to kana - kunyomi':
+        return Object.assign(question, {
+          question: dataEntry.kanji[0],
+          answers: dataEntry.kana.kun,
+          placeholder: 'Kunyomi',
+          dataSet: dataEntry.dataSet
+          // hint: dataEntry.english.join(', ')
+        });
+      case 'Kanji to kana - onyomi':
+        return Object.assign(question, {
+          question: dataEntry.kanji[0],
+          answers: dataEntry.kana.on,
+          placeholder: 'Onyomi',
+          dataSet: dataEntry.dataSet
+          // hint: dataEntry.english.join(', ')
+        });
+      case 'Kana to kanji - kunyomi':
+        return Object.assign(question, {
+          question: dataEntry.kana.kun.join(', '),
+          answers: dataEntry.kanji,
+          placeholder: 'Kanji',
+          dataSet: dataEntry.dataSet
+          // hint: dataEntry.english.join(', ')
+        });
+      case 'Kana to kanji - onyomi':
+        return Object.assign(question, {
+          question: dataEntry.kana.on.join(', '),
+          answers: dataEntry.kanji,
+          placeholder: 'Kanji',
+          dataSet: dataEntry.dataSet
+          // hint: dataEntry.english.join(', ')
+        });
       case 'Kanji to English':
         return Object.assign(question, {
           question: dataEntry.kanji[0],
