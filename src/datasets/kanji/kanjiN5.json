@@ -483,11 +483,11 @@
     "kanji": ["耳"],
     "romaji": {
       "kun": ["mimi"],
-      "on": ["ジ"]
+      "on": ["ji"]
     },
     "kana": {
       "kun": ["みみ"],
-      "on": ["ji"]
+      "on": ["ジ"]
     },
     "english": ["ear"]
   },
@@ -753,7 +753,7 @@
       "kun": ["さき"],
       "on": ["セン"]
     },
-    "english": ["ahead"]
+    "english": ["previous", "former", "earlier", "preceding", "prior"]
   },
   {
     "kanji": ["前"],
@@ -801,7 +801,7 @@
       "kun": ["おお", "おおきい", "おおいに"],
       "on": ["ダイ"]
     },
-    "english": ["big", "university"]
+    "english": ["big", "university", "large"]
   },
   {
     "kanji": ["男"],
@@ -885,7 +885,7 @@
       "kun": ["つち"],
       "on": ["ド"]
     },
-    "english": ["soil"]
+    "english": ["soil", "earth", "dirt", "ground"]
   },
   {
     "kanji": ["東"],
@@ -909,7 +909,7 @@
       "kun": ["みち"],
       "on": ["ドウ"]
     },
-    "english": ["way", "path"]
+    "english": ["way", "path", "road"]
   },
   {
     "kanji": ["読", "読む"],
@@ -958,5 +958,281 @@
       "on": ["ニチ", "ジツ"]
     },
     "english": ["day", "sun"]
+  },
+  {
+    "kanji": ["入", "入る", "入れる"],
+    "romaji": {
+      "kun": ["i", "iru", "ireru", "hai", "hairu"],
+      "on": ["chuu"]
+    },
+    "kana": {
+      "kun": ["い", "いる", "いれる", "はい", "はいる"],
+      "on": ["チュウ"]
+    },
+    "english": ["enter", "put in"]
+  },
+  {
+    "kanji": ["年"],
+    "romaji": {
+      "kun": ["toshi"],
+      "on": ["nen"]
+    },
+    "kana": {
+      "kun": ["とし"],
+      "on": ["ネン"]
+    },
+    "english": ["year"]
+  },
+  {
+    "kanji": ["買", "買う"],
+    "romaji": {
+      "kun": ["ka", "kau"],
+      "on": ["bai"]
+    },
+    "kana": {
+      "kun": ["か", "かう"],
+      "on": ["バイ"]
+    },
+    "english": ["buy"]
+  },
+  {
+    "kanji": ["白", "白い"],
+    "romaji": {
+      "kun": ["shiro", "shiroi", "shira"],
+      "on": ["haku"]
+    },
+    "kana": {
+      "kun": ["しろ", "しろい", "しら"],
+      "on": ["ハク"]
+    },
+    "english": ["white"]
+  },
+  {
+    "kanji": ["八", "八つ"],
+    "romaji": {
+      "kun": ["ya", "yattsu", "ya", "you"],
+      "on": ["hachi"]
+    },
+    "kana": {
+      "kun": ["や", "やっつ", "やっ", "よう"],
+      "on": ["ハチ"]
+    },
+    "english": ["eight"]
+  },
+  {
+    "kanji": ["半", "半ば"],
+    "romaji": {
+      "kun": ["naka", "nakaba"],
+      "on": ["han"]
+    },
+    "kana": {
+      "kun": ["なか", "なかば"],
+      "on": ["ハン"]
+    },
+    "english": ["half"]
+  },
+  {
+    "kanji": ["百"],
+    "romaji": {
+      "kun": [],
+      "on": ["hyaku"]
+    },
+    "kana": {
+      "kun": [],
+      "on": ["ヒャク"]
+    },
+    "english": ["hundred"]
+  },
+  {
+    "kanji": ["父"],
+    "romaji": {
+      "kun": ["chichi"],
+      "on": ["fu"]
+    },
+    "kana": {
+      "kun": ["ちち"],
+      "on": ["フ"]
+    },
+    "english": ["father"]
+  },
+  {
+    "kanji": ["分", "分ける", "分かれる", "分かる", "分かつ"],
+    "romaji": {
+      "kun": ["wa", "wakeru", "wakareru", "wakaru", "wakatsu"],
+      "on": ["bun", "fun", "bu"]
+    },
+    "kana": {
+      "kun": ["わ", "わける", "わかれる", "わかる", "わかつ"],
+      "on": ["ブン", "フン", "ブ"]
+    },
+    "english": ["divide", "part", "minute"]
+  },
+  {
+    "kanji": ["聞", "聞く", "聞こえる"],
+    "romaji": {
+      "kun": ["ki", "kiku", "kikoeru"],
+      "on": ["bun", "mon"]
+    },
+    "kana": {
+      "kun": ["き", "きく", "きこえる"],
+      "on": ["ブン", "モン"]
+    },
+    "english": ["hear"]
+  },
+  {
+    "kanji": ["母"],
+    "romaji": {
+      "kun": ["haha"],
+      "on": ["bo"]
+    },
+    "kana": {
+      "kun": ["はは"],
+      "on": ["ボ"]
+    },
+    "english": ["mother"]
+  },
+  {
+    "kanji": ["北"],
+    "romaji": {
+      "kun": ["kita"],
+      "on": ["hoku"]
+    },
+    "kana": {
+      "kun": ["きた"],
+      "on": ["ホク"]
+    },
+    "english": ["north"]
+  },
+  {
+    "kanji": ["木"],
+    "romaji": {
+      "kun": ["ki", "ko"],
+      "on": ["boku"]
+    },
+    "kana": {
+      "kun": ["き", "こ"],
+      "on": ["ボク"]
+    },
+    "english": ["tree", "wood"]
+  },
+  {
+    "kanji": ["本"],
+    "romaji": {
+      "kun": ["moto"],
+      "on": ["hon"]
+    },
+    "kana": {
+      "kun": ["もと"],
+      "on": ["ホン"]
+    },
+    "english": ["basis", "book", "this"]
+  },
+  {
+    "kanji": ["毎"],
+    "romaji": {
+      "kun": [],
+      "on": ["mai"]
+    },
+    "kana": {
+      "kun": [],
+      "on": ["マイ"]
+    },
+    "english": ["every"]
+  },
+  {
+    "kanji": ["万"],
+    "romaji": {
+      "kun": [],
+      "on": ["man", "ban"]
+    },
+    "kana": {
+      "kun": [],
+      "on": ["マン", "バン"]
+    },
+    "english": ["ten thousand"]
+  },
+  {
+    "kanji": ["名"],
+    "romaji": {
+      "kun": ["na"],
+      "on": ["mei", "nyou"]
+    },
+    "kana": {
+      "kun": ["な"],
+      "on": ["メイ", "ニョウ"]
+    },
+    "english": ["name"]
+  },
+  {
+    "kanji": ["目"],
+    "romaji": {
+      "kun": ["me", "ma"],
+      "on": ["moku"]
+    },
+    "kana": {
+      "kun": ["め", "ま"],
+      "on": ["モク"]
+    },
+    "english": ["eye", "item"]
+  },
+  {
+    "kanji": ["友"],
+    "romaji": {
+      "kun": ["tomo"],
+      "on": ["yuu"]
+    },
+    "kana": {
+      "kun": ["とも"],
+      "on": ["ユウ"]
+    },
+    "english": ["friend"]
+  },
+  {
+    "kanji": ["来", "来る", "来た", "来る", "来す"],
+    "romaji": {
+      "kun": ["ku", "kuru", "kita", "kitaru", "kitasu"],
+      "on": ["rai"]
+    },
+    "kana": {
+      "kun": ["く", "くる", "きた", "きたる", "きたす"],
+      "on": ["ライ"]
+    },
+    "english": ["come"]
+  },
+  {
+    "kanji": ["立", "立つ", "立てる"],
+    "romaji": {
+      "kun": ["ta", "tatsu", "tateru"],
+      "on": ["ritsu", "ryuu"]
+    },
+    "kana": {
+      "kun": ["た", "たつ", "たてる"],
+      "on": ["リツ", "リュウ"]
+    },
+    "english": ["stand", "establish"]
+  },
+  {
+    "kanji": ["六", "六つ"],
+    "romaji": {
+      "kun": ["mu", "mutsu", "muttsu", "mui"],
+      "on": ["roku"]
+    },
+    "kana": {
+      "kun": ["む", "むつ", "むっつ", "むい"],
+      "on": ["ロク"]
+    },
+    "english": ["six"]
+  },
+  {
+    "kanji": ["話", "話す"],
+    "romaji": {
+      "kun": ["hana", "hanasu", "hanashi"],
+      "on": ["wa"]
+    },
+    "kana": {
+      "kun": ["はな", "はなす", "はなし"],
+      "on": ["ワ"]
+    },
+    "english": ["speak", "talk"]
   }
 ]

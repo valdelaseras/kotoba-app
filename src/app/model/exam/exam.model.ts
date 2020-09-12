@@ -163,6 +163,31 @@ export class Exam {
           dataSet: dataEntry.dataSet,
           hint: dataEntry.english.join( ', ' )
         });
+        // TODO: now only tested on kunyomi which is probably undesirable
+      case 'Kanji to romaji':
+        return Object.assign(question, {
+          question: dataEntry.kanji.join( ', ' ),
+          answers: dataEntry.romaji.kun,
+          placeholder: 'Kunyomi',
+          dataSet: dataEntry.dataSet,
+          hint: dataEntry.english.join( ', ' )
+        });
+      case 'Kanji to English':
+        return Object.assign(question, {
+          question: dataEntry.kanji[0],
+          answers: dataEntry.english,
+          placeholder: 'Translation',
+          dataSet: dataEntry.dataSet
+        });
+      case 'English to kanji':
+        return Object.assign(question, {
+          question: dataEntry.english.join( ', ' ),
+          answers: dataEntry.kanji,
+          placeholder: 'Kanji',
+          dataSet: dataEntry.dataSet
+        });
+        // TODO: add shuffle all
+        // TODO: add shuffle kanji & romaji
     }
   }
 
