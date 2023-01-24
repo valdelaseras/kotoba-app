@@ -19,26 +19,22 @@
           "options": {
             "outputPath": "docs",
             "index": "src/index.html",
+            "inlineStyleLanguage": "scss",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/datasets"
             ],
             "styles": [
               "src/styles/scss/index.scss"
             ],
             "scripts": [
               "node_modules/hammerjs/hammer.js"
-            ],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
+            ]
           },
           "configurations": {
             "production": {
