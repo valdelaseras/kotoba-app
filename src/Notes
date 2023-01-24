@@ -62,7 +62,7 @@ TODO: DATASETS !!!
 
       - when doing kanji to english some translations aren't evaluated well. 'ten thousand' and 'go out'. Looks like it's the space maybe?
       - should put a skip function in that never returns the question and counts as incorrect
-
+      - need to add some other element to display some instructions on how to play X test ( based on chosen method ). IE if you do kanji to onyomi or something, users must know to type the answers in katakana
       - KN5: Eki doesn't have a kun reading (technically). Displaying jsut 'station' kind of works but in the scoresheet, you only see the kanji there on the Q side, instead of A side.
       - both kun and on entries should be counted as correct OR on / kun must be indicated on the question
 
