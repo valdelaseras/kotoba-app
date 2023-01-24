@@ -12,6 +12,10 @@
     --disabled-brd-color: #111;
     --disabled-bg-color: #333;
     --disabled-txt-color: grey;
+
+    .invert-on-dark-theme {
+      filter: invert(1);
+    }
   }
 
   &.light-theme {
@@ -30,4 +34,4 @@
   }
 }
 
-//TODO: invert-on-dark-theme class
+

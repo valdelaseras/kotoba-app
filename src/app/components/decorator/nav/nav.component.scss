@@ -24,6 +24,7 @@
 .nav-toggle span {
   line-height: 0;
   font-size: 1.5rem;
+  text-decoration: none;
 }
 
 .nav-checkbox,
@@ -37,6 +38,10 @@
   height: 28px;
   width: 35px;
   visibility: hidden;
+}
+
+.nav-toggle:hover {
+  cursor: pointer;
 }
 
 .nav-toggle > span:first-child {
@@ -133,5 +138,6 @@
 
     .nav-link {
         color: var(--secondary-color);
+        text-decoration: none;
     }
 }

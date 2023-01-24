@@ -35,9 +35,6 @@ export class Exam {
     return this.currentQuestionIndex + 1;
   }
 
-  // @TODO
-  // store these integers in exam entry on question increment
-  // that way angular wont have to recalculate the score every n milliseconds
   numberOfCorrectAnswers(): number {
     let correct = 0;
 

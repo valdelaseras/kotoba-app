@@ -36,9 +36,13 @@
               <ul class="btn-group vertical">
                 <ng-container *ngFor="let availableExam of availableExams">
                   <li *ngIf="availableExam.category === 'kanji'" >
-                    <button class="btn btn-secondary" [ngClass]="selectedAvailableExam.id === availableExam.id ? 'active' : null"
+                    <button class="btn btn-secondary"
+                            [disabled]="availableExam.dataSets.length === 0"
+                            [ngClass]="selectedAvailableExam.id === availableExam.id ? 'active' : null"
                             (click)="selectAvailableExam( availableExam )"
-                            title="{{ availableExam.title }}">{{ availableExam.title }}</button>
+                            title="{{ availableExam.title }}">
+                      {{ availableExam.title }}
+                    </button>
                   </li>
                 </ng-container>
               </ul>
